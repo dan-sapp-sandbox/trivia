@@ -43,11 +43,13 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# URL to use when referring to static files (e.g. in a web browser)
+# URL and directory for serving static files
 STATIC_URL = '/static/'
 
-# The absolute path to the directory where static files will be collected
+# Directory where collectstatic will copy files
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
+# Additional directories to search for static files
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Adjust this to match your structure
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
