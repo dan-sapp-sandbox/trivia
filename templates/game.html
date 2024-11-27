@@ -7,6 +7,7 @@
   <title>Trivia Game</title>
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/game.css' %}">
 </head>
 
 <body>
@@ -14,19 +15,18 @@
     <nav>
       <a href="/">Home</a> |
       <a href="/leaderboard/">Leaderboard</a>
+      <p>Score: <span>{{ score }}</span></p>
     </nav>
   </header>
   <main>
-    <h1>Trivia Game</h1>
-    <div class="counter-score">
+    <div class="question-block">
       <p>Question {{ question_number }} of {{ questions|length }}</p>
-      <p>Score: <span>{{ score }}</span></p>
+      <p>{{ question_text }}</p>
     </div>
-    <p>{{ question_text }}</p>
-    <form method="post">
+    <form method="post" class="answer-block">
       {% csrf_token %}
       {% for answer in answers %}
-      <button type="submit" name="answer" value="{{ answer }}">{{ answer }}</button>
+      <button class="answer" type="submit" name="answer" value="{{ answer }}">{{ answer }}</button>
       {% endfor %}
     </form>
   </main>

@@ -4,23 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trivia Game</title>
+  <title>Quirk</title>
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 
 <body>
-  <header>
+  <header class="home-header">
     <nav>
       <a href="/">Home</a> |
       <a href="/leaderboard/">Leaderboard</a>
     </nav>
   </header>
-  <main>
-    <h1>Welcome to the Trivia Game!</h1>
-    <p>Test your knowledge with trivia questions. Ready to start?</p>
-    <a href="/start/" class="button">Start Game</a>
+
+  <main class="home-main">
+    <div class="title">
+      <div class="title-1">Horseshoes</div>
+      <div class="title-2">and</div>
+      <div class="title-3">Handgrenades</div>
+    </div>
+    <div class="start-game-btn-container">
+      <button onclick="window.location.href='/start/'" class="start-game-btn">Start Game</button>
+    </div>
   </main>
+
+  <footer class="home-footer">
+  </footer>
 </body>
 
 </html>
