@@ -72,9 +72,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (keep if you're serving static files)
 STATIC_URL = 'static'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-STATICFILES_DIRS = [BASE_DIR / 'static']  # Can be removed if you're not using extra static directories
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
