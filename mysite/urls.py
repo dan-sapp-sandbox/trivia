@@ -6,6 +6,10 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('start/', views.start_game, name='start_game'),
+    path('game/', views.play_game, name='play_game'),
+    path('game-over/', views.game_over, name='game_over'),
+    path('leaderboard/', views.leaderboard, name='leaderboard'),
     path('notebooks/<str:notebook_name>/', views.view_notebook, name='view_notebook'),
 ]
 if True:
