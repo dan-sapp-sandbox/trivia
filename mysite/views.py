@@ -1,8 +1,10 @@
 import json
 import random
 import os
+import ast
 from django.shortcuts import render, redirect
 from django.conf import settings
+from comics.models import Superhero
 
 def view_notebook(request, notebook_name):
     notebook_path = os.path.join('notebooks', f'{notebook_name}.html')
@@ -17,13 +19,31 @@ def view_notebook(request, notebook_name):
 def home(request):
     return render(request, 'home.html')
 
-def load_trivia_questions():
-    json_file_path = os.path.join(settings.BASE_DIR, 'questions.json')
-
-    with open(json_file_path, 'r') as file:
-        questions = json.load(file)
+def generate_superhero_question():
+    superhero = random.choice(Superhero.objects.all())
+    superhero_powers = superhero.power.split(", ")
+    selected_power = random.choice(superhero_powers)
     
-    return questions
+    other_heroes = Superhero.objects.exclude(power__contains=selected_power).order_by('?')[:3]
+    answers = [superhero] + list(other_heroes)
+    random.shuffle(answers)
+    question_text = f"Which superhero has the power of {selected_power}?"
+    
+    return {
+        'question_text': question_text,
+        'answers': [hero.name for hero in answers],
+        'correct_answer': superhero.name,
+    }
+
+def load_trivia_questions():
+    superhero_questions = [
+        generate_superhero_question(),
+        generate_superhero_question(),
+        generate_superhero_question(),
+        generate_superhero_question(),
+        generate_superhero_question(),
+    ]
+    return superhero_questions
 
 def start_game(request):
     questions = load_trivia_questions()
@@ -47,7 +67,7 @@ def play_game(request):
 
     if request.method == 'POST':
         selected_answer = request.POST['answer']
-        if selected_answer == question['correct']:
+        if selected_answer == question['correct_answer']:
             score += 1
 
         request.session['score'] = score
@@ -57,7 +77,7 @@ def play_game(request):
 
     return render(request, 'game.html', {
         'question_number': question_index + 1,
-        'question_text': question['question'],
+        'question_text': question['question_text'],
         'answers': question['answers'],
         'score': score,
         'questions': questions

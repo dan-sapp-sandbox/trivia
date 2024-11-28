@@ -70,12 +70,11 @@ main {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 500px;
 }
 
 .answer {
   background: rgb(78, 207, 95);
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: 20px;
   padding: 5px;
   width: 100%;
