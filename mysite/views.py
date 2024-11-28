@@ -2,7 +2,6 @@ import json
 import random
 import os
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, JsonResponse
 from django.conf import settings
 
 def view_notebook(request, notebook_name):
@@ -24,17 +23,20 @@ def load_trivia_questions():
     with open(json_file_path, 'r') as file:
         questions = json.load(file)
     
-    random.shuffle(questions)
-    return questions[:5]
+    return questions
 
 def start_game(request):
+    questions = load_trivia_questions()
+    random.shuffle(questions)
+
+    request.session['questions'] = questions
     request.session['question_index'] = 0
     request.session['score'] = 0
+    
     return redirect('/game/')
 
 def play_game(request):
-    questions = load_trivia_questions()
-
+    questions = request.session.get('questions', [])
     question_index = request.session.get('question_index', 0)
     score = request.session.get('score', 0)
 
@@ -46,7 +48,7 @@ def play_game(request):
     if request.method == 'POST':
         selected_answer = request.POST['answer']
         if selected_answer == question['correct']:
-            score += 1 
+            score += 1
 
         request.session['score'] = score
         request.session['question_index'] = question_index + 1
