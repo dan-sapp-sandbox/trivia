@@ -14,12 +14,14 @@
 <body>
   <header>
     <nav>
-      <a href="/">Home</a> |
-      <a href="/leaderboard/">Leaderboard</a>
-      <p>Score: <span>{{ score }}</span></p>
+      <div class="home-link">
+        <button onclick="window.location.href='/'">Back</button>
+      </div>
+      <!-- <a href="/leaderboard/">Leaderboard</a> -->
+      <p class="score">Score: <span>{{ score }}</span></p>
     </nav>
   </header>
-  <main>
+  <main class="prompt">
     <div class="question-block">
       <p>Question {{ question_number }} of {{ questions|length }}</p>
       <p>{{ question_text }}</p>

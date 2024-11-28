@@ -24,7 +24,8 @@ def load_trivia_questions():
     with open(json_file_path, 'r') as file:
         questions = json.load(file)
     
-    return questions
+    random.shuffle(questions)
+    return questions[:5]
 
 def start_game(request):
     request.session['question_index'] = 0

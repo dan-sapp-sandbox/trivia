@@ -18,29 +18,29 @@ p {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   height: 300px;
+  overflow: hidden;
 }
 
 .title {
   height: fit-content;
   padding: 5px;
+  font-weight: bold;
 }
 
 .title-1 {
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 2rem;
   color: gray;
 }
 
 .title-2 {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1.5rem;
   color: gray;
 }
 
 .title-3 {
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 2rem;
   color: gray;
 }
 
