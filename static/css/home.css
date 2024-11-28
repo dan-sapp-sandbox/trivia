@@ -21,6 +21,7 @@ p {
   flex-wrap: wrap;
   height: 300px;
   overflow: hidden;
+  padding: 20px;
 }
 
 .title {
