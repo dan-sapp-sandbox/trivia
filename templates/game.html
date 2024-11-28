@@ -22,8 +22,8 @@
   </header>
   <main class="prompt">
     <div class="question-block">
-      <p>Question {{ question_number }} of {{ questions|length }}</p>
-      <p>{{ question_text }}</p>
+      <p class="status">Question {{ question_number }} of {{ questions|length }}</p>
+      <p class="question">{{ question_text }}</p>
     </div>
     <form method="post" class="answer-block">
       {% csrf_token %}

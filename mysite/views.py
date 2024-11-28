@@ -1,6 +1,7 @@
 import json
 import random
 import os
+import pandas as pd
 import ast
 from django.shortcuts import render, redirect
 from django.conf import settings
@@ -19,30 +20,55 @@ def view_notebook(request, notebook_name):
 def home(request):
     return render(request, 'home.html')
 
-def generate_superhero_question():
-    superhero = random.choice(Superhero.objects.all())
-    superhero_powers = superhero.power.split(", ")
-    selected_power = random.choice(superhero_powers)
+def generate_superhero_appearance_question():
+    superheroes = Superhero.objects.all()
+    superhero_data = [(hero.name, hero.debut_issue) for hero in superheroes]
+    df = pd.DataFrame(superhero_data, columns=["Name", "Debut Issue"])
+    print("Superhero Data:", superhero_data)
+
+    superhero = random.choice(df.to_dict(orient="records"))
     
-    other_heroes = Superhero.objects.exclude(power__contains=selected_power).order_by('?')[:3]
-    answers = [superhero] + list(other_heroes)
+    other_heroes = df[df["Debut Issue"] != superhero["Debut Issue"]].sample(n=3)
+    answers = [superhero["Debut Issue"]] + other_heroes["Debut Issue"].tolist()
     random.shuffle(answers)
-    question_text = f"Which superhero has the power of {selected_power}?"
     
+    question_text = f"Which comic was the first appearance of {superhero['Name']}?"
+
     return {
         'question_text': question_text,
-        'answers': [hero.name for hero in answers],
-        'correct_answer': superhero.name,
+        'answers': answers,
+        'correct_answer': superhero["Debut Issue"],
+    }
+
+
+def generate_superhero_power_question():
+    superheroes = Superhero.objects.all()
+    superhero_data = [(hero.name, hero.power) for hero in superheroes]
+    df = pd.DataFrame(superhero_data, columns=["Name", "Power"])
+    df["Power"] = df["Power"].apply(lambda x: ', '.join([p.strip().title() for p in x.split(',')]))
+
+    superhero = random.choice(df.to_dict(orient="records"))
+    selected_power = random.choice(superhero["Power"].split(", "))
+    other_heroes = df[~df["Power"].str.contains(selected_power, case=False)].sample(n=3)
+    answers = [superhero["Name"]] + other_heroes["Name"].tolist()
+    random.shuffle(answers)
+    question_text = f"Which superhero has the power of {selected_power}?"
+
+    return {
+        'question_text': question_text,
+        'answers': answers,
+        'correct_answer': superhero["Name"],
     }
 
 def load_trivia_questions():
-    superhero_questions = [
-        generate_superhero_question(),
-        generate_superhero_question(),
-        generate_superhero_question(),
-        generate_superhero_question(),
-        generate_superhero_question(),
+    num_questions = 5
+    superhero_appearance_questions = [
+        generate_superhero_appearance_question() for _ in range(num_questions)
     ]
+    superhero_power_questions = [
+        generate_superhero_power_question() for _ in range(num_questions)
+    ]
+    superhero_questions = superhero_appearance_questions + superhero_power_questions
     return superhero_questions
 
 def start_game(request):
