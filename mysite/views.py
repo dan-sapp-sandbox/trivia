@@ -32,7 +32,7 @@ def generate_superhero_appearance_question():
     answers = [superhero["Debut Issue"]] + other_heroes["Debut Issue"].tolist()
     random.shuffle(answers)
     
-    question_text = f"Which comic was the first appearance of {superhero['Name']}?"
+    question_text = f"Which comic has the first appearance of {superhero['Name']}?"
 
     return {
         'question_text': question_text,
@@ -52,7 +52,7 @@ def generate_superhero_power_question():
     other_heroes = df[~df["Power"].str.contains(selected_power, case=False)].sample(n=3)
     answers = [superhero["Name"]] + other_heroes["Name"].tolist()
     random.shuffle(answers)
-    question_text = f"Which superhero has the power of {selected_power}?"
+    question_text = f"Which character has the power of {selected_power}?"
 
     return {
         'question_text': question_text,
