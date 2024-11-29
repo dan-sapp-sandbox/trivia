@@ -6,6 +6,8 @@ class Superhero(models.Model):
     power = models.TextField()
     debut_date = models.TextField()
     debut_issue = models.TextField()
+    is_villain = models.BooleanField(default=False)
+    is_marvel = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

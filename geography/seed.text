@@ -1,0 +1,24 @@
+from geography.models import Landmark
+
+landmarks_data = [
+    ("Eiffel Tower", "48.8584", "2.2945"),
+    ("Statue of Liberty", "40.6892", "-74.0445"),
+    ("Great Wall of China", "40.4319", "116.5704"),
+    ("Taj Mahal", "27.1751", "78.0421"),
+    ("Sydney Opera House", "-33.8568", "151.2153"),
+    ("Christ the Redeemer", "-22.9519", "-43.2105"),
+    ("Machu Picchu", "-13.1631", "-72.5450"),
+    ("Pyramids of Giza", "29.9792", "31.1342"),
+    ("Mount Everest", "27.9881", "86.9250"),
+    ("Stonehenge", "51.1789", "-1.8262")
+]
+
+for name, latitude, longitude in landmarks_data:
+    landmark = Landmark(
+        name=name,
+        latitude=latitude,
+        longitude=longitude,
+    )
+    landmark.save()
+
+print("Superheroes data with title-cased powers has been added to the database.")

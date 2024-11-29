@@ -6,6 +6,8 @@ import ast
 from django.shortcuts import render, redirect
 from django.conf import settings
 from comics.models import Superhero
+from geography.models import Landmark
+from movies.models import Movie
 
 def view_notebook(request, notebook_name):
     notebook_path = os.path.join('notebooks', f'{notebook_name}.html')
@@ -20,11 +22,35 @@ def view_notebook(request, notebook_name):
 def home(request):
     return render(request, 'home.html')
 
+def generate_movie_has_actor_question():
+    movies = Movie.objects.all()
+    movie_data = [(movie.name, movie.actors) for movie in movies]
+    df = pd.DataFrame(movie_data, columns=["Name", "actors"])
+    
+    movie = random.choice(df.to_dict(orient="records"))
+    movie_actors = movie["actors"].split(',')
+    correct_answer = random.choice(movie_actors).strip()
+    
+    other_actors = df[df["actors"] != movie["actors"]].sample(n=3)
+    incorrect_answers = []
+    for _, row in other_actors.iterrows():
+        actors = row["actors"].split(',')
+        incorrect_answers.append(random.choice(actors).strip())
+    
+    answers = [correct_answer] + incorrect_answers
+    random.shuffle(answers)
+    question_text = f"Which actor stars in {movie['Name']}?"
+    
+    return {
+        'question_text': question_text,
+        'answers': answers,
+        'correct_answer': correct_answer,
+    }
+    
 def generate_superhero_appearance_question():
     superheroes = Superhero.objects.all()
     superhero_data = [(hero.name, hero.debut_issue) for hero in superheroes]
     df = pd.DataFrame(superhero_data, columns=["Name", "Debut Issue"])
-    print("Superhero Data:", superhero_data)
 
     superhero = random.choice(df.to_dict(orient="records"))
     
@@ -60,19 +86,29 @@ def generate_superhero_power_question():
         'correct_answer': superhero["Name"],
     }
 
-def load_trivia_questions():
-    num_questions = 5
-    superhero_appearance_questions = [
-        generate_superhero_appearance_question() for _ in range(num_questions)
-    ]
-    superhero_power_questions = [
-        generate_superhero_power_question() for _ in range(num_questions)
-    ]
-    superhero_questions = superhero_appearance_questions + superhero_power_questions
+def load_trivia_questions(selected_options, num_questions):
+    superhero_appearance_questions = []
+    if 'heroes' in selected_options:
+        superhero_appearance_questions = [
+            generate_superhero_appearance_question() for _ in range(num_questions)
+        ]
+    superhero_power_questions = []
+    if 'villains' in selected_options:
+        superhero_power_questions = [
+            generate_superhero_power_question() for _ in range(num_questions)
+        ]
+    actor_in_movie_questions = []
+    if 'movies' in selected_options:
+        actor_in_movie_questions = [
+            generate_movie_has_actor_question() for _ in range(num_questions)
+        ]
+    superhero_questions = superhero_appearance_questions + superhero_power_questions + actor_in_movie_questions
     return superhero_questions
 
 def start_game(request):
-    questions = load_trivia_questions()
+    selected_options = request.POST.getlist('topics')
+    num_questions = int(request.POST.get('num_questions', 10))
+    questions = load_trivia_questions(selected_options, num_questions)
     random.shuffle(questions)
 
     request.session['questions'] = questions

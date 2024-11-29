@@ -13,6 +13,10 @@ body {
   }
 }
 
+.hide {
+  display: none;
+}
+
 header {
   background-color: #3b4d61;
   color: white;

@@ -81,14 +81,14 @@ main {
 }
 
 .answer {
-  background: rgb(78, 207, 95);
-  font-size: 1.5rem;
+  background: rgb(104, 183, 252);
+  font-size: 1.2rem;
   border-radius: 20px;
-  padding: 5px;
+  padding: 10px;
   width: 100%;
 }
 
 .answer:hover {
-  background: rgb(137, 211, 147);
+  background: rgb(124, 190, 247);
   cursor: pointer;
 }

@@ -13,15 +13,74 @@
 
 <body>
   <main class="home-main">
-    <div class="title">
-      <div class="title-1">Horseshoes</div>
-      <div class="title-2">and</div>
-      <div class="title-3">Hand Grenades</div>
-    </div>
-    <div class="start-game-btn-container">
-      <button onclick="window.location.href='/start/'" class="start-game-btn">Start Game</button>
-    </div>
+    <form method="POST" action="{% url 'start_game' %}">
+      {% csrf_token %}
+      <h1 class="title">
+        Quirk
+      </h1>
+      <div>
+        <input type="checkbox" id="movies" name="topics" value="movies"
+          onchange="toggleHide('movies', 'movies-options')">
+        <label for="movies">Movies</label>
+        <div id="movies-options" class="hide">
+          <input type="checkbox" id="movie1" name="topics" value="movie1">
+          <label for="movie1">Option 1</label>
+
+          <input type="checkbox" id="movie2" name="topics" value="movie2">
+          <label for="movie2">Option 2</label>
+        </div>
+      </div>
+      <div>
+        <input type="checkbox" id="geography" name="topics" value="geography"
+          onchange="toggleHide('geography', 'geography-options')">
+        <label for="geography">Geography</label>
+        <div id="geography-options" class="hide">
+          <input type="checkbox" id="geography1" name="topics" value="geography1">
+          <label for="geography1">Option 1</label>
+
+          <input type="checkbox" id="geography2" name="topics" value="geography2">
+          <label for="geography2">Option 2</label>
+        </div>
+      </div>
+      <div>
+        <input type="checkbox" id="comics" name="topics" value="comics"
+          onchange="toggleHide('comics', 'comic-options')">
+        <label for="comics">Comics</label>
+        <div id="comic-options" class="hide">
+          <input type="checkbox" id="heroes" name="topics" value="heroes">
+          <label for="heroes">Heroes</label>
+
+          <input type="checkbox" id="villains" name="topics" value="villains">
+          <label for="villains">Villains</label>
+
+          <input type="checkbox" id="marvel" name="topics" value="marvel">
+          <label for="marvel">Marvel</label>
+
+          <input type="checkbox" id="dc" name="topics" value="dc">
+          <label for="dc">DC</label>
+        </div>
+      </div>
+
+      <h2>Number of Questions:</h2>
+      <label>
+        <input type="number" name="num_questions" value="10" min="1" max="50">
+      </label>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
   </main>
+  <script>
+    function toggleHide(triggerId, targetId) {
+      const trigger = document.getElementById(triggerId);
+      const target = document.getElementById(targetId);
+      if (trigger.checked) {
+        target.style.display = "block";
+      } else {
+        target.style.display = "none";
+      }
+    }
+  </script>
 </body>
 
 </html>
