@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Landmark
 
-# Register your models here.
+@admin.register(Landmark)
+class LandmarkAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'latitude', 'longitude')
