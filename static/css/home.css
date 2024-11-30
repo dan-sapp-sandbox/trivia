@@ -31,7 +31,8 @@ label {
   display: inline-block;
   font-size: 1.5rem;
   color: white;
-  font-family: cursive;
+  font-family: sans-serif;
+  font-weight: bold;
   padding: 20px 30px;
   margin: 5px;
   border: 2px solid transparent;
@@ -46,41 +47,49 @@ input[type="checkbox"]:checked+label {
 }
 
 label[for="movies"] {
-  background-color: rgb(230, 113, 236, 0.5);
+  background-color: rgb(230, 113, 236, 0.3);
 }
+
 label[for="movies"]:hover {
   background-color: rgb(230, 113, 236, 0.8);
 }
+
 input[type="checkbox"]:checked+label[for="movies"] {
   background-color: rgb(230, 113, 236, 0.9);
 }
 
 label[for="comics"] {
-  background-color: rgba(83, 211, 134, 0.2);
+  background-color: rgba(83, 211, 134, 0.3);
 }
+
 label[for="comics"]:hover {
   background-color: rgba(83, 211, 134, 0.5);
 }
+
 input[type="checkbox"]:checked+label[for="comics"] {
   background-color: rgb(83, 211, 134, 0.8);
 }
 
 label[for="music"] {
-  background-color: rgb(234, 89, 89, 0.2);
+  background-color: rgb(234, 89, 89, 0.3);
 }
+
 label[for="music"]:hover {
   background-color: rgb(234, 89, 89, 0.5);
 }
+
 input[type="checkbox"]:checked+label[for="music"] {
   background-color: rgb(234, 89, 89, 0.8);
 }
 
 label[for="pokemon"] {
-  background-color: rgb(104, 183, 252, 0.2);
+  background-color: rgb(104, 183, 252, 0.3);
 }
+
 label[for="pokemon"]:hover {
   background-color: rgb(104, 183, 252, 0.5);
 }
+
 input[type="checkbox"]:checked+label[for="pokemon"] {
   background-color: rgb(104, 183, 252, 0.8);
 }
@@ -113,9 +122,9 @@ form {
   height: fit-content;
   padding: 5px;
   font-weight: bold;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: cursive;
   font-size: 5rem;
-  color: white;
+  color: rgb(252, 135, 80);
 }
 
 .toggle-container {
@@ -130,7 +139,7 @@ form {
   color: black;
   border-radius: 25px;
   transition: background-color 0.3s, transform 0.2s;
-  font-size: 16px;
+  font-size: 1.2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -138,7 +147,6 @@ form {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* When the radio button is checked, style the label */
 .toggle-container input[type="radio"]:checked+label {
   background-color: #4CAF50;
   color: white;
@@ -149,7 +157,6 @@ form {
   display: none;
 }
 
-/* Hover effect */
 .toggle-container label:hover {
   background-color: #ddd;
   transform: scale(1.05);

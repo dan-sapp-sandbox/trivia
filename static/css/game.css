@@ -14,9 +14,9 @@ nav .home-link {
 .home-link button {
   width: fit-content;
   border-radius: 12px;
-  background: rgb(173, 211, 168);
+  background: rgb(171, 171, 171);
   padding: 5px 10px;
-  color: black;
+  color: white;
 }
 
 .home-link button:hover {
@@ -32,6 +32,7 @@ nav p {
 main {
   max-width: 800px;
   margin: auto;
+  color: white;
 }
 
 .score {
@@ -69,7 +70,7 @@ main {
   font-weight: bold;
   text-align: center;
   margin: 0;
-  font-family: cursive;
+  font-family: sans-serif;
 }
 
 
@@ -85,12 +86,13 @@ main {
 
 .answer {
   font-size: 1.5rem;
-  font-family: cursive;
+  font-family: sans-serif;
   border-radius: 100px;
   padding: 25px 0;
   width: 100%;
   border: none;
   font-weight: bold;
+  color: white;
 }
 
 .answer:hover {
