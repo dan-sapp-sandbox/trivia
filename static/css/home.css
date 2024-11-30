@@ -105,3 +105,43 @@ form {
   width: 100%;
   bottom: 0;
 }
+
+.toggle-container {
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-container label {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border-radius: 25px;
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* When the radio button is checked, style the label */
+.toggle-container input[type="radio"]:checked + label {
+  background-color: #4CAF50;
+  color: white;
+  transform: scale(1.1);
+}
+
+.toggle-container input[type="radio"] {
+  display: none;
+}
+
+/* Hover effect */
+.toggle-container label:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+}
+
+.submit-button {
+  margin-top: 20px;
+}

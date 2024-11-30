@@ -7,18 +7,20 @@ from django.conf import settings
 from geography.models import Landmark
 from comics.views import generate_superhero_appearance_question, generate_superhero_power_question
 from movies.views import generate_movie_has_actor_question, generate_actor_in_movie_question
+from music.views import generate_artist_of_song
+from pokemon.views import generate_pokemon_of_type
       
 def home(request):
     return render(request, 'home.html')
 
 def load_trivia_questions(selected_options, num_questions):
     superhero_appearance_questions = []
-    if 'heroes' in selected_options:
+    if 'comics' in selected_options:
         superhero_appearance_questions = [
             generate_superhero_appearance_question() for _ in range(num_questions)
         ]
     superhero_power_questions = []
-    if 'villains' in selected_options:
+    if 'comics' in selected_options:
         superhero_power_questions = [
             generate_superhero_power_question() for _ in range(num_questions)
         ]
@@ -34,11 +36,25 @@ def load_trivia_questions(selected_options, num_questions):
             generate_actor_in_movie_question() for _ in range(num_questions)
         ]
         
+    artist_of_song_questions = []
+    if 'music' in selected_options:
+        artist_of_song_questions = [
+            generate_artist_of_song() for _ in range(num_questions)
+        ]
+        
+    pokemon_of_type_questions = []
+    if 'pokemon' in selected_options:
+        pokemon_of_type_questions = [
+            generate_pokemon_of_type() for _ in range(num_questions)
+        ]
+        
     question_lists = [
         superhero_appearance_questions,
         superhero_power_questions,
         movie_has_actor_questions,
-        actor_in_movie_questions
+        actor_in_movie_questions,
+        artist_of_song_questions,
+        pokemon_of_type_questions,
     ]
     questions = [question for sublist in question_lists for question in sublist]
     return questions

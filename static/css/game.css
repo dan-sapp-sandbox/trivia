@@ -11,14 +11,15 @@ nav .home-link {
   justify-content: center;
 }
 
-.home-link button{
+.home-link button {
   width: fit-content;
   border-radius: 12px;
   background: rgb(173, 211, 168);
   padding: 5px 10px;
   color: black;
 }
-.home-link button:hover{
+
+.home-link button:hover {
   cursor: pointer;
   background: rgb(155, 214, 157);
 }
@@ -56,7 +57,7 @@ main {
   height: 100px;
 }
 
-.question-block .status{
+.question-block .status {
   font-size: 1.3rem;
   text-align: center;
   margin: 0;
@@ -81,14 +82,46 @@ main {
 }
 
 .answer {
-  background: rgb(104, 183, 252);
-  font-size: 1.2rem;
-  border-radius: 20px;
-  padding: 10px;
+  font-size: 1.3rem;
+  border-radius: 100px;
+  padding: 25px 0;
   width: 100%;
+  border: none;
+  font-weight: bold;
 }
 
 .answer:hover {
-  background: rgb(124, 190, 247);
   cursor: pointer;
+}
+
+.answer:nth-child(2) {
+  background: rgba(83, 211, 134, 0.8);
+}
+
+.answer:nth-child(2):hover {
+  background: rgb(83, 211, 134);
+}
+
+.answer:nth-child(3) {
+  background: rgb(230, 113, 236, 0.8);
+}
+
+.answer:nth-child(3):hover {
+  background: rgb(230, 113, 236);
+}
+
+.answer:nth-child(4) {
+  background: rgb(234, 89, 89, 0.8);
+}
+
+.answer:nth-child(4):hover {
+  background: rgb(234, 89, 89);
+}
+
+.answer:nth-child(5) {
+  background: rgb(104, 183, 252, 0.8);
+}
+
+.answer:nth-child(5):hover {
+  background: rgb(124, 190, 247);
 }

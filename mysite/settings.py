@@ -18,6 +18,8 @@ INSTALLED_APPS = [
     'comics',
     'geography',
     'movies',
+    'music',
+    'pokemon',
 ]
 
 MIDDLEWARE = [
