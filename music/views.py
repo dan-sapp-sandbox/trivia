@@ -15,7 +15,7 @@ def generate_artist_of_song():
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
-    question_text = f"Who wrote {song['Name']}?"
+    question_text = f"Who wrote '{song['Name']}'?"
     
     return {
         'question_text': question_text,

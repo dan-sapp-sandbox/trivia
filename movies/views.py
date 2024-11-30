@@ -19,7 +19,7 @@ def generate_movie_has_actor_question():
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
-    question_text = f"Which actor stars in {movie['Name']}?"
+    question_text = f"Which actor stars in '{movie['Name']}'?"
     
     return {
         'question_text': question_text,
