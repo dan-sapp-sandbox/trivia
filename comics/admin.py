@@ -3,4 +3,4 @@ from .models import Superhero
 
 @admin.register(Superhero)
 class SuperheroAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'power', 'debut_date', 'debut_issue')
+    list_display = ('id', 'name', 'alias', 'power', 'debut_date', 'debut_issue', 'is_villain', 'is_marvel')
