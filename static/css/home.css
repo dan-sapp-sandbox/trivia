@@ -35,7 +35,7 @@ label {
   color: white;
   font-family: sans-serif;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 5px 15px;
   border: 2px solid transparent;
   border-radius: 50px;
   cursor: pointer;
@@ -79,22 +79,6 @@ input[type="checkbox"]:checked+label[for="comics"]:hover {
   background-color: rgb(83, 211, 134, 0.65);
 }
 
-label[for="music"] {
-  background-color: rgb(234, 89, 89, 0.3);
-}
-
-label[for="music"]:hover {
-  background-color: rgb(234, 89, 89, 0.5);
-}
-
-input[type="checkbox"]:checked+label[for="music"] {
-  background-color: rgb(234, 89, 89, 0.8);
-}
-
-input[type="checkbox"]:checked+label[for="music"]:hover {
-  background-color: rgb(234, 89, 89, 0.65);
-}
-
 label[for="pokemon"] {
   background-color: rgb(104, 183, 252, 0.3);
 }
@@ -109,6 +93,22 @@ input[type="checkbox"]:checked+label[for="pokemon"] {
 
 input[type="checkbox"]:checked+label[for="pokemon"]:hover {
   background-color: rgb(104, 183, 252, 0.65);
+}
+
+label[for="music"] {
+  background-color: rgb(234, 89, 89, 0.3);
+}
+
+label[for="music"]:hover {
+  background-color: rgb(234, 89, 89, 0.5);
+}
+
+input[type="checkbox"]:checked+label[for="music"] {
+  background-color: rgb(234, 89, 89, 0.8);
+}
+
+input[type="checkbox"]:checked+label[for="music"]:hover {
+  background-color: rgb(234, 89, 89, 0.65);
 }
 
 label[for="geography"] {
@@ -141,6 +141,86 @@ input[type="checkbox"]:checked+label[for="history"] {
 
 input[type="checkbox"]:checked+label[for="history"]:hover {
   background-color: rgb(83, 211, 134, 0.65);
+}
+
+label[for="english"] {
+  background-color: rgb(104, 183, 252, 0.3);
+}
+
+label[for="english"]:hover {
+  background-color: rgb(104, 183, 252, 0.5);
+}
+
+input[type="checkbox"]:checked+label[for="english"] {
+  background-color: rgb(104, 183, 252, 0.8);
+}
+
+input[type="checkbox"]:checked+label[for="english"]:hover {
+  background-color: rgb(104, 183, 252, 0.65);
+}
+
+label[for="spanish"] {
+  background-color: rgb(234, 89, 89, 0.3);
+}
+
+label[for="spanish"]:hover {
+  background-color: rgb(234, 89, 89, 0.5);
+}
+
+input[type="checkbox"]:checked+label[for="spanish"] {
+  background-color: rgb(234, 89, 89, 0.8);
+}
+
+input[type="checkbox"]:checked+label[for="spanish"]:hover {
+  background-color: rgb(234, 89, 89, 0.65);
+}
+
+label[for="french"] {
+  background-color: rgb(230, 113, 236, 0.3);
+}
+
+label[for="french"]:hover {
+  background-color: rgb(230, 113, 236, 0.5);
+}
+
+input[type="checkbox"]:checked+label[for="french"] {
+  background-color: rgb(230, 113, 236, 0.8);
+}
+
+input[type="checkbox"]:checked+label[for="french"]:hover {
+  background-color: rgb(230, 113, 236, 0.65);
+}
+
+label[for="german"] {
+  background-color: rgb(83, 211, 134, 0.3);
+}
+
+label[for="german"]:hover {
+  background-color: rgb(83, 211, 134, 0.5);
+}
+
+input[type="checkbox"]:checked+label[for="german"] {
+  background-color: rgb(83, 211, 134, 0.8);
+}
+
+input[type="checkbox"]:checked+label[for="german"]:hover {
+  background-color: rgb(83, 211, 134, 0.65);
+}
+
+label[for="japanese"] {
+  background-color: rgb(104, 183, 252, 0.3);
+}
+
+label[for="japanese"]:hover {
+  background-color: rgb(104, 183, 252, 0.5);
+}
+
+input[type="checkbox"]:checked+label[for="japanese"] {
+  background-color: rgb(104, 183, 252, 0.8);
+}
+
+input[type="checkbox"]:checked+label[for="japanese"]:hover {
+  background-color: rgb(104, 183, 252, 0.65);
 }
 
 button {

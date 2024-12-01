@@ -10,7 +10,7 @@ from music.views import generate_artist_of_song
 from pokemon.views import generate_pokemon_of_type
 from geography.views import generate_landmark_at_coord_question
 from history.views import generate_year_of_event_question
-      
+from words.views import *
 def home(request):
     return render(request, 'home.html')
 
@@ -69,6 +69,48 @@ def load_trivia_questions(selected_options, num_questions):
             generate_year_of_event_question() for _ in range(num_questions)
         ]
         
+    word_of_definition_questions = []
+    if 'english' in selected_options:
+        word_of_definition_questions = [
+            generate_word_of_definition_question() for _ in range(num_questions)
+        ]
+        
+    french_of_english_question = []
+    if 'french' in selected_options:
+        french_of_english_question = [
+            generate_french_of_english_question() for _ in range(num_questions)
+        ]
+        
+    english_of_french_question = []
+    if 'french' in selected_options:
+        english_of_french_question = [
+            generate_english_of_french_question() for _ in range(num_questions)
+        ]
+        
+    spanish_of_english_question = []
+    if 'spanish' in selected_options:
+        spanish_of_english_question = [
+            generate_spanish_of_english_question() for _ in range(num_questions)
+        ]
+        
+    english_of_spanish_question = []
+    if 'spanish' in selected_options:
+        english_of_spanish_question = [
+            generate_english_of_spanish_question() for _ in range(num_questions)
+        ]
+        
+    japanese_of_english_question = []
+    if 'japanese' in selected_options:
+        japanese_of_english_question = [
+            generate_japanese_of_english_question() for _ in range(num_questions)
+        ]
+        
+    english_of_japanese_question = []
+    if 'japanese' in selected_options:
+        english_of_japanese_question = [
+            generate_english_of_japanese_question() for _ in range(num_questions)
+        ]
+        
     question_lists = [
         superhero_appearance_questions,
         superhero_power_questions,
@@ -79,6 +121,13 @@ def load_trivia_questions(selected_options, num_questions):
         pokemon_of_type_questions,
         landmark_at_coord_questions,
         year_of_event_questions,
+        word_of_definition_questions,
+        french_of_english_question,
+        english_of_french_question,
+        spanish_of_english_question,
+        english_of_spanish_question,
+        japanese_of_english_question,
+        english_of_japanese_question,
     ]
     questions = [question for sublist in question_lists for question in sublist]
     return questions

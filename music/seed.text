@@ -1,54 +1,323 @@
 from music.models import Song
 
-songs_data = [
-    ("Bohemian Rhapsody", "Queen", "Is this the real life? Is this just fantasy?", "A Night at the Opera", "1975"),
-    ("Imagine", "John Lennon", "You may say I'm a dreamer, but I'm not the only one.", "Imagine", "1971"),
-    ("Hotel California", "Eagles", "Welcome to the Hotel California...", "Hotel California", "1976"),
-    ("Smells Like Teen Spirit", "Nirvana", "With the lights out, it's less dangerous...", "Nevermind", "1991"),
-    ("Someone Like You", "Adele", "Never mind, I'll find someone like you...", "21", "2011"),
-    ("Shape of You", "Ed Sheeran", "I'm in love with the shape of you...", "Divide", "2017"),
-    ("Rolling in the Deep", "Adele", "We could have had it all, rolling in the deep...", "21", "2010"),
-    ("Stairway to Heaven", "Led Zeppelin", "And she's buying a stairway to heaven...", "Led Zeppelin IV", "1971"),
-    ("Hey Jude", "The Beatles", "Hey Jude, don't make it bad...", "The Beatles Again", "1968"),
-    ("Like a Rolling Stone", "Bob Dylan", "How does it feel, to be on your own...", "Highway 61 Revisited", "1965"),
-    ("Thriller", "Michael Jackson", "'Cause this is thriller, thriller night...", "Thriller", "1982"),
-    ("Billie Jean", "Michael Jackson", "Billie Jean is not my lover...", "Thriller", "1982"),
-    ("Shake It Off", "Taylor Swift", "'Cause the players gonna play, play, play, play, play...", "1989", "2014"),
-    ("Hallelujah", "Leonard Cohen", "Hallelujah, Hallelujah...", "Various Positions", "1984"),
-    ("Wonderwall", "Oasis", "Because maybe, you're gonna be the one that saves me...", "(What's the Story) Morning Glory?", "1995"),
-    ("Let It Be", "The Beatles", "When I find myself in times of trouble...", "Let It Be", "1970"),
-    ("Sweet Child O' Mine", "Guns N' Roses", "Where do we go now? Where do we go now?", "Appetite for Destruction", "1987"),
-    ("Lose Yourself", "Eminem", "You better lose yourself in the music, the moment...", "8 Mile: Music from and Inspired by the Motion Picture", "2002"),
-    ("Born to Run", "Bruce Springsteen", "Oh, someday girl, I don't know when...", "Born to Run", "1975"),
-    ("Rolling in the Deep", "Adele", "We could have had it all...", "21", "2010"),
-    ("Uptown Funk", "Mark Ronson ft. Bruno Mars", "Don't believe me, just watch...", "Uptown Special", "2014"),
-    ("Creep", "Radiohead", "I'm a creep, I'm a weirdo...", "Pablo Honey", "1992"),
-    ("Toxic", "Britney Spears", "With a taste of your lips, I'm on a ride...", "In the Zone", "2003"),
-    ("I Will Always Love You", "Whitney Houston", "And I will always love you...", "The Bodyguard: Original Soundtrack Album", "1992"),
-    ("Africa", "Toto", "It's gonna take a lot to drag me away from you...", "Toto IV", "1982"),
-    ("Shallow", "Lady Gaga & Bradley Cooper", "I'm off the deep end, watch as I dive in...", "A Star Is Born Soundtrack", "2018"),
-    ("Old Town Road", "Lil Nas X ft. Billy Ray Cyrus", "I'm gonna take my horse to the old town road...", "7 EP", "2019"),
-    ("Bad Guy", "Billie Eilish", "So you're a tough guy, like it really rough guy...", "When We All Fall Asleep, Where Do We Go?", "2019"),
-    ("All of Me", "John Legend", "'Cause all of me loves all of you...", "Love in the Future", "2013"),
-    ("Poker Face", "Lady Gaga", "Can't read my, can't read my, no, he can't read my poker face...", "The Fame", "2008"),
-    ("We Will Rock You", "Queen", "We will, we will rock you...", "News of the World", "1977"),
-    ("Livin' on a Prayer", "Bon Jovi", "Whoa, we're halfway there...", "Slippery When Wet", "1986"),
-    ("I Want It That Way", "Backstreet Boys", "Tell me why, ain't nothin' but a heartache...", "Millennium", "1999"),
-    ("My Heart Will Go On", "Celine Dion", "My heart will go on and on...", "Let's Talk About Love", "1997"),
-    ("Take On Me", "a-ha", "Take on me, take me on...", "Hunting High and Low", "1985"),
-    ("Blinding Lights", "The Weeknd", "Ooh, I'm blinded by the lights...", "After Hours", "2020"),
-    ("What a Wonderful World", "Louis Armstrong", "I see trees of green, red roses too...", "What a Wonderful World", "1967"),
-    ("Respect", "Aretha Franklin", "R-E-S-P-E-C-T, find out what it means to me...", "I Never Loved a Man the Way I Love You", "1967"),
-    ("I Will Survive", "Gloria Gaynor", "I will survive, oh, as long as I know how to love...", "Love Tracks", "1978"),
-    ("Heroes", "David Bowie", "We can be heroes, just for one day...", "'Heroes'", "1977"),
+songs_1990 = [
+    ("Another Day in Paradise", "Phil Collins"),
+    ("U Can't Touch This", "MC Hammer"),
+    ("Nothing Compares 2 U", "Sinead O'Connor"),
+    ("Vogue", "Madonna"),
+    ("Hold On", "Wilson Phillips"),
+    ("Ice Ice Baby", "Vanilla Ice"),
+    ("Black Velvet", "Alannah Myles")
+]
+songs_1991 = [
+    ("Joyride", "Roxette"),
+    ("Another Day in Paradise", "Phil Collins"),
+    ("Black or White", "Michael Jackson"),
+    ("Gonna Make You Sweat (Everybody Dance Now)", "C+C Music Factory"),
+    ("I Like the Way (The Kissing Game)", "Hi-Five"),
+    ("Something to Talk About", "Bonnie Raitt"),
+    ("Emotions", "Mariah Carey"),
+    ("More Than Words", "Extreme"),
+    ("I Don't Want to Cry", "Mariah Carey"),
+    ("The First Time", "Surface")
+]
+songs_1992 = [
+    ("End of the Road", "Boyz II Men"),
+    ("Baby Baby", "Amy Grant"),
+    ("Jump", "Kriss Kross"),
+    ("I Will Always Love You", "Whitney Houston"),
+    ("Don't Let the Sun Go Down on Me", "George Michael and Elton John"),
+    ("Save the Best for Last", "Vanessa Williams"),
+    ("Under the Bridge", "Red Hot Chili Peppers"),
+    ("Baby Got Back", "Sir Mix-a-Lot"),
+    ("My Lovin' (You're Never Gonna Get It)", "En Vogue"),
+    ("Tears in Heaven", "Eric Clapton")
+]
+songs_1993 = [
+    ("I Will Always Love You", "Whitney Houston"),
+    ("That's the Way Love Goes", "Janet Jackson"),
+    ("Can We Talk", "Tevin Campbell"),
+    ("Dreamlover", "Mariah Carey"),
+    ("I'd Do Anything for Love", "Meat Loaf"),
+    ("Informer", "Snow"),
+    ("What Is Love", "Haddaway"),
+    ("Again", "Janet Jackson"),
+    ("The Power of Love", "Celine Dion"),
+    ("Can't Help Falling in Love", "UB40")
+]
+songs_1994 = [
+    ("The Sign", "Ace of Base"),
+    ("I Swear", "All-4-One"),
+    ("I'll Make Love to You", "Boyz II Men"),
+    ("Stay (I Missed You)", "Lisa Loeb"),
+    ("On Bended Knee", "Boyz II Men"),
+    ("The Power of Love", "Celine Dion"),
+    ("Bump n' Grind", "R. Kelly"),
+    ("I Don't Wanna Do Anything", "Shania Twain"),
+    ("All I Want to Do", "Sheryl Crow"),
+    ("You Mean the World to Me", "Toni Braxton")
+]
+songs_1995 = [
+    ("Gangsta's Paradise", "Coolio"),
+    ("Waterfalls", "TLC"),
+    ("Kiss from a Rose", "Seal"),
+    ("On Bended Knee", "Boyz II Men"),
+    ("Take a Bow", "Madonna"),
+    ("Don't Take It Personal", "Monica"),
+    ("Creep", "TLC"),
+    ("I Can Love You Like That", "All-4-One"),
+    ("You Are Not Alone", "Michael Jackson"),
+    ("Fantasy", "Mariah Carey")
+]
+songs_1996 = [
+    ("Because You Loved Me", "Celine Dion"),
+    ("Macarena (Bayside Boys Remix)", "Los Del Rio"),
+    ("I Can't Stop Loving You", "Ray Charles"),
+    ("Twisted", "Keith Sweat"),
+    ("Give Me One Reason", "Tracy Chapman"),
+    ("Tha Crossroads", "Bone Thugs-n-Harmony"),
+    ("Nobody Knows", "The Tony Rich Project"),
+    ("You're Makin' Me High", "Toni Braxton"),
+    ("Change the World", "Eric Clapton"),
+    ("Un-break My Heart", "Toni Braxton")
+]
+songs_1997 = [
+    ("I'll Be Missing You", "Puff Daddy, Faith Evans"),
+    ("Can't Nobody Hold Me Down", "Puff Daddy"),
+    ("Honey", "Mariah Carey"),
+    ("Wannabe", "Spice Girls"),
+    ("Something About the Way You Look Tonight", "Elton John"),
+    ("Tubthumping", "Chumbawamba"),
+    ("MMMBop", "Hanson"),
+    ("Foolish Games", "Jewel"),
+    ("Candle in the Wind", "Elton John"),
+    ("Bitch", "Meredith Brooks")
+]
+songs_1998 = [
+    ("Too Much", "Spice Girls"),
+    ("The Boy Is Mine", "Brandy & Monica"),
+    ("Together Again", "Janet Jackson"),
+    ("My Heart Will Go On", "Celine Dion"),
+    ("I Don't Want to Miss a Thing", "Aerosmith"),
+    ("Doo Wop (That Thing)", "Lauryn Hill"),
+    ("You're Still the One", "Shania Twain"),
+    ("Gettin' Jiggy wit It", "Will Smith"),
+    ("Together Again", "Janet Jackson"),
+    ("Truly Madly Deeply", "Savage Garden")
+]
+songs_1999 = [
+    ("Believe", "Cher"),
+    ("No Scrubs", "TLC"),
+    ("Smooth", "Santana featuring Rob Thomas"),
+    ("Livin' La Vida Loca", "Ricky Martin"),
+    ("If You Had My Love", "Jennifer Lopez"),
+    ("I Want It That Way", "Backstreet Boys"),
+    ("Mambo No. 5", "Lou Bega"),
+    ("Every Morning", "Sugar Ray"),
+    ("Kiss Me", "Sixpence None the Richer"),
+    ("My Name Is", "Eminem")
+]
+songs_2000 = [
+    ("Breathe", "Faith Hill"),
+    ("Smooth", "Santana"),
+    ("Say My Name", "Destiny's Child"),
+    ("Maria Maria", "Santana"),
+    ("I Knew I Loved You", "Savage Garden"),
+    ("Everything You Want", "Vertical Horizon"),
+    ("He Wasn't Man Enough", "Toni Braxton"),
+    ("Try Again", "Aaliyah"),
+    ("I Wanna Know", "Joe"),
+    ("Back at One", "Brian McKnight")
+]
+songs_2001 = [
+    ("Hanging by a Moment", "Lifehouse"),
+    ("Bootylicious", "Destiny's Child"),
+    ("All for You", "Janet Jackson"),
+    ("Lady Marmalade", "Christina Aguilera"),
+    ("I'm Real", "Jennifer Lopez"),
+    ("U Remind Me", "Usher"),
+    ("Fallin'", "Alicia Keys"),
+    ("Get the Party Started", "Pink"),
+    ("Thank God I Found You", "Mariah Carey"),
+    ("How You Remind Me", "Nickelback")
+]
+songs_2002 = [
+    ("Hot in Herre", "Nelly"),
+    ("The Middle", "Jimmy Eat World"),
+    ("Complicated", "Avril Lavigne"),
+    ("U Got It Bad", "Usher"),
+    ("Blurry", "Puddle of Mudd"),
+    ("A Thousand Miles", "Vanessa Carlton"),
+    ("The Thong Song", "Sisqó"),
+    ("Without Me", "Eminem"),
+    ("The Longest Time", "Tony Bennett"),
+    ("Foolish", "Ashanti")
+]
+songs_2003 = [
+    ("In Da Club", "50 Cent"),
+    ("Crazy in Love", "Beyoncé"),
+    ("Where Is the Love?", "Black Eyed Peas"),
+    ("Ignition (Remix)", "R. Kelly"),
+    ("The Way You Move", "OutKast"),
+    ("Hey Ya!", "OutKast"),
+    ("Baby Boy", "Beyoncé"),
+    ("Lose Yourself", "Eminem"),
+    ("Rock Your Body", "Justin Timberlake"),
+    ("All I Have", "Jennifer Lopez")
+]
+songs_2004 = [
+    ("Yeah!", "Usher"),
+    ("Burn", "Usher"),
+    ("If I Ain't Got You", "Alicia Keys"),
+    ("I Don't Wanna Know", "Mario Winans"),
+    ("Drop It Like It's Hot", "Snoop Dogg"),
+    ("The Way We Move", "OutKast"),
+    ("This Love", "Maroon 5"),
+    ("Lean Back", "Terror Squad"),
+    ("Toxic", "Britney Spears")
+]
+songs_2005 = [
+    ("We Belong Together", "Mariah Carey"),
+    ("Gold Digger", "Kanye West"),
+    ("Don't Cha", "The Pussycat Dolls"),
+    ("Hollaback Girl", "Gwen Stefani"),
+    ("Since U Been Gone", "Kelly Clarkson"),
+    ("Run It!", "Chris Brown"),
+    ("Sugar We're Goin Down", "Fall Out Boy"),
+    ("One, Two Step", "Ciara"),
+    ("Boulevard of Broken Dreams", "Green Day"),
+    ("Beep", "The Pussycat Dolls")
+]
+songs_2006 = [
+    ("Bad Day", "Daniel Powter"),
+    ("Temperature", "Sean Paul"),
+    ("Promiscuous", "Nelly Furtado"),
+    ("Hips Don't Lie", "Shakira"),
+    ("Ridin'", "Chamillionaire"),
+    ("SexyBack", "Justin Timberlake"),
+    ("Money Maker", "Ludacris"),
+    ("Irreplaceable", "Beyoncé"),
+    ("Grillz", "Nelly"),
+    ("How to Save a Life", "The Fray")
 ]
 
-for name, artist, chorus, album, release_year in songs_data:
+
+for name, artist in songs_1990:
     song = Song(
         name=name,
         artist=artist,
-        chorus=chorus,
-        album=album,
-        release_year=release_year,
+        release_year="1990"
+    )
+    song.save()
+for name, artist in songs_1991:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="1991"
+    )
+    song.save()
+for name, artist in songs_1992:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="1992"
+    )
+    song.save()
+for name, artist in songs_1993:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="1993"
+    )
+    song.save()
+for name, artist in songs_1994:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="1994"
+    )
+    song.save()
+for name, artist in songs_1995:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="1995"
+    )
+    song.save()
+for name, artist in songs_1996:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="songs_1996"
+    )
+    song.save()
+for name, artist in songs_1997:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="songs_1997"
+    )
+    song.save()
+for name, artist in songs_1998:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="1998"
+    )
+    song.save()
+for name, artist in songs_1999:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="1999"
+    )
+    song.save()
+for name, artist in songs_2000:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="2000"
+    )
+    song.save()
+for name, artist in songs_2001:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="2001"
+    )
+    song.save()
+for name, artist in songs_2002:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="2002"
+    )
+    song.save()
+for name, artist in songs_2003:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="2003"
+    )
+    song.save()
+for name, artist in songs_2004:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="2004"
+    )
+    song.save()
+for name, artist in songs_2005:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="2005"
+    )
+    song.save()
+for name, artist in songs_2006:
+    song = Song(
+        name=name,
+        artist=artist,
+        release_year="2006"
     )
     song.save()

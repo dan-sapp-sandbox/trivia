@@ -1,0 +1,218 @@
+from words.models import Word
+
+common_words = [
+    ("Hello", "A greeting or expression of goodwill.",
+     "Hallo", "Bonjour", "Hola", "Konnichiwa"),
+    
+    ("Friend", "A person whom one knows and with whom one has a bond of mutual affection.",
+     "Freund", "Ami", "Amigo", "Tomodachi"),
+    
+    ("Love", "An intense feeling of deep affection.",
+     "Liebe", "Amour", "Amor", "Ai"),
+    
+    ("Thank you", "A polite expression of gratitude.",
+     "Danke", "Merci", "Gracias", "Arigatou"),
+    
+    ("Food", "Any nutritious substance that people or animals eat or drink.",
+     "Essen", "Nourriture", "Comida", "Tabemono"),
+    
+    ("Water", "A clear, colorless, odorless, and tasteless liquid essential for life.",
+     "Wasser", "Eau", "Agua", "Mizu"),
+    
+    ("Sun", "The star around which the Earth orbits, providing light and warmth.",
+     "Sonne", "Soleil", "Sol", "Taiyou"),
+    
+    ("Happy", "Feeling or showing pleasure or contentment.",
+     "Glücklich", "Heureux", "Feliz", "Shiawase"),
+    
+    ("Work", "Activity involving mental or physical effort done in order to achieve a result.",
+     "Arbeit", "Travail", "Trabajo", "Shigoto"),
+    
+    ("School", "An institution for educating children or a place of learning.",
+     "Schule", "École", "Escuela", "Gakkou"),
+    
+    ("Love", "An intense feeling of deep affection.",
+     "Liebe", "Amour", "Amor", "Ai"),
+    
+    ("Home", "The place where one lives permanently.",
+     "Zuhause", "Maison", "Hogar", "Ie"),
+    
+    ("Family", "A group consisting of parents and children living together.",
+     "Familie", "Famille", "Familia", "Kazoku"),
+    
+    ("Life", "The existence of an individual human being or animal.",
+     "Leben", "Vie", "Vida", "Inochi"),
+    
+    ("Light", "The natural agent that makes things visible.",
+     "Licht", "Lumière", "Luz", "Hikari"),
+    
+    ("Dark", "The absence of light.",
+     "Dunkel", "Sombre", "Oscuro", "Yami"),
+    
+    ("Morning", "The period of time between sunrise and noon.",
+     "Morgen", "Matin", "Mañana", "Asa"),
+    
+    ("Night", "The time from sunset to sunrise when it is dark outside.",
+     "Nacht", "Nuit", "Noche", "Yoru"),
+    
+    ("Peace", "Freedom from disturbance; tranquility.",
+     "Frieden", "Paix", "Paz", "Heiwa"),
+    
+    ("War", "A state of armed conflict between different countries or groups.",
+     "Krieg", "Guerre", "Guerra", "Senso"),
+    
+    ("Truth", "The quality or state of being true.",
+     "Wahrheit", "Vérité", "Verdad", "Shinjitsu"),
+    
+    ("Lie", "An intentionally false statement.",
+     "Lüge", "Mensonge", "Mentira", "Uso"),
+    
+    ("Justice", "Just behavior or treatment.",
+     "Gerechtigkeit", "Justice", "Justicia", "Seigi"),
+    
+    ("Freedom", "The power or right to act, speak, or think as one wants.",
+     "Freiheit", "Liberté", "Libertad", "Jiyuu"),
+    
+    ("Right", "Morally good, justified, or acceptable.",
+     "Recht", "Droit", "Derecho", "Tadashii"),
+    
+    ("Wrong", "Not correct or accurate.",
+     "Falsch", "Faux", "Incorrecto", "Machigai"),
+    
+    ("Help", "The action of making something easier for someone.",
+     "Hilfe", "Aide", "Ayuda", "Tasukeru"),
+    
+    ("Stop", "To bring to an end.",
+     "Stopp", "Arrêter", "Parar", "Yameru"),
+    
+    ("Go", "To move or travel from one place to another.",
+     "Gehen", "Aller", "Ir", "Iku"),
+    
+    ("Fast", "Moving or capable of moving at high speed.",
+     "Schnell", "Rapide", "Rápido", "Hayai"),
+    
+    ("Slow", "Moving or operating at a low speed.",
+     "Langsam", "Lent", "Lento", "Osoi"),
+    
+    ("Big", "Of considerable size, extent, or intensity.",
+     "Groß", "Grand", "Grande", "Ookii"),
+    
+    ("Small", "Of a size that is less than normal or usual.",
+     "Klein", "Petit", "Pequeño", "Chiisai"),
+    
+    ("Strong", "Having strength or power.",
+     "Stark", "Fort", "Fuerte", "Tsuyoi"),
+    
+    ("Weak", "Lacking strength or power.",
+     "Schwach", "Faible", "Débil", "Yowai"),
+    
+    ("Beautiful", "Pleasing the senses or mind aesthetically.",
+     "Schön", "Beau", "Hermoso", "Utsukushii"),
+    
+    ("Ugly", "Unpleasant or repulsive in appearance.",
+     "Hässlich", "Laid", "Feo", "Minikui"),
+    
+    ("Tall", "Of great height.",
+     "Groß", "Grand", "Alto", "Takai"),
+    
+    ("Short", "Measuring a small distance from end to end.",
+     "Kurz", "Court", "Corto", "Mijikai"),
+    
+    ("Hot", "Having a high temperature.",
+     "Heiß", "Chaud", "Caliente", "Atsui"),
+    
+    ("Cold", "Having a low temperature.",
+     "Kalt", "Froid", "Frío", "Tsumetai"),
+    
+    ("New", "Not existing before.",
+     "Neu", "Nouveau", "Nuevo", "Atarashii"),
+    
+    ("Old", "Having lived for a long time.",
+     "Alt", "Vieux", "Viejo", "Furu"),
+    
+    ("Young", "Having lived or existed for only a short time.",
+     "Jung", "Jeune", "Joven", "Wakai"),
+    
+    ("Old", "Advanced in age.",
+     "Alt", "Vieux", "Viejo", "Toshi o totta"),
+    
+    ("Father", "A man in relation to his child or children.",
+     "Vater", "Père", "Padre", "Chichi"),
+    
+    ("Mother", "A woman in relation to her child or children.",
+     "Mutter", "Mère", "Madre", "Haha"),
+    
+    ("Son", "A male child.",
+     "Sohn", "Fils", "Hijo", "Musuko"),
+    
+    ("Daughter", "A female child.",
+     "Tochter", "Fille", "Hija", "Musume"),
+    
+    ("Brother", "A man or boy in relation to other sons and daughters of his parents.",
+     "Bruder", "Frère", "Hermano", "Ani"),
+    
+    ("Sister", "A woman or girl in relation to other daughters and sons of her parents.",
+     "Schwester", "Sœur", "Hermana", "Imouto"),
+    
+    ("Child", "A young human being below the age of adulthood.",
+     "Kind", "Enfant", "Niño", "Kodomo"),
+    
+    ("Man", "An adult male human.",
+     "Mann", "Homme", "Hombre", "Otoko"),
+    
+    ("Woman", "An adult female human.",
+     "Frau", "Femme", "Mujer", "Onna"),
+    
+    ("Morning", "The period of time between sunrise and noon.",
+     "Morgen", "Matin", "Mañana", "Asa"),
+    
+    ("Evening", "The period of time at the end of the day.",
+     "Abend", "Soir", "Noche", "Yoru"),
+    
+    ("Time", "The indefinite continued progress of existence.",
+     "Zeit", "Temps", "Tiempo", "Jikan"),
+    
+    ("Year", "The time taken by the earth to make one revolution around the sun.",
+     "Jahr", "An", "Año", "Toshi"),
+    
+    ("Month", "Each of the twelve divisions of the year.",
+     "Monat", "Mois", "Mes", "Tsuki"),
+    
+    ("Week", "A period of seven days.",
+     "Woche", "Semaine", "Semana", "Shuu"),
+    
+    ("Day", "A period of 24 hours.",
+     "Tag", "Jour", "Día", "Hi"),
+    
+    ("Minute", "A period of sixty seconds.",
+     "Minute", "Minute", "Minuto", "Fun"),
+    
+    ("Second", "A fraction of a minute.",
+     "Sekunde", "Seconde", "Segundo", "Byou"),
+    
+    ("Season", "Each of the four divisions of the year.",
+     "Jahreszeit", "Saison", "Estación", "Kisetsu"),
+    
+    ("Winter", "The coldest season of the year.",
+     "Winter", "Hiver", "Invierno", "Fuyu"),
+    
+    ("Spring", "The season after winter and before summer.",
+     "Frühling", "Printemps", "Primavera", "Haru"),
+    
+    ("Summer", "The warmest season of the year.",
+     "Sommer", "Été", "Verano", "Natsu"),
+    
+    ("Autumn", "The season after summer and before winter.",
+     "Herbst", "Automne", "Otoño", "Aki")
+]
+
+for name, definition, german, french, spanish, japanese in common_words:
+    word = Word(
+        name=name,
+        definition=definition,
+        german=german,
+        french=french,
+        spanish=spanish,
+        japanese=japanese,
+    )
+    word.save()

@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'pokemon',
     'geography',
     'history',
+    'words',
 ]
 
 MIDDLEWARE = [
