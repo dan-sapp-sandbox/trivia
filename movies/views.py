@@ -53,26 +53,26 @@ def generate_actor_in_movie_question():
         'correct_answer': correct_answer,
     }
     
-def generate_year_of_movie_question():
-    movies = Movie.objects.all()
-    movie_data = [(movie.name, movie.release_year) for movie in movies]
-    df = pd.DataFrame(movie_data, columns=["Name", "Release_Year"])
+# def generate_year_of_movie_question():
+#     movies = Movie.objects.all()
+#     movie_data = [(movie.name, movie.release_year) for movie in movies]
+#     df = pd.DataFrame(movie_data, columns=["Name", "Release_Year"])
     
-    movie = random.choice(df.to_dict(orient="records"))
-    correct_answer = movie["Release_Year"]
+#     movie = random.choice(df.to_dict(orient="records"))
+#     correct_answer = movie["Release_Year"]
     
-    other_years = df[df["Release_Year"] != movie["Release_Year"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_years.iterrows():
-        year = row["Release_Year"]
-        incorrect_answers.append(year)
+#     other_years = df[df["Release_Year"] != movie["Release_Year"]].sample(n=3)
+#     incorrect_answers = []
+#     for _, row in other_years.iterrows():
+#         year = row["Release_Year"]
+#         incorrect_answers.append(year)
     
-    answers = [correct_answer] + incorrect_answers
-    random.shuffle(answers)
-    question_text = f"Which movie does {movie["Name"]} star in?"
+#     answers = [correct_answer] + incorrect_answers
+#     random.shuffle(answers)
+#     question_text = f"Which movie does {movie["Name"]} star in?"
     
-    return {
-        'question_text': question_text,
-        'answers': answers,
-        'correct_answer': correct_answer,
-    }
+#     return {
+#         'question_text': question_text,
+#         'answers': answers,
+#         'correct_answer': correct_answer,
+#     }
