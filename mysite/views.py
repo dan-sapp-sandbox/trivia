@@ -4,11 +4,11 @@ import os
 import ast
 from django.shortcuts import render, redirect
 from django.conf import settings
-from geography.models import Landmark
 from comics.views import generate_superhero_appearance_question, generate_superhero_power_question
 from movies.views import generate_movie_has_actor_question, generate_actor_in_movie_question, generate_year_of_movie_question
 from music.views import generate_artist_of_song
 from pokemon.views import generate_pokemon_of_type
+from geography.views import generate_landmark_at_coord_question
       
 def home(request):
     return render(request, 'home.html')
@@ -52,6 +52,12 @@ def load_trivia_questions(selected_options, num_questions):
     if 'pokemon' in selected_options:
         pokemon_of_type_questions = [
             generate_pokemon_of_type() for _ in range(num_questions)
+        ]
+        
+    landmark_at_coord_questions = []
+    if 'geography' in selected_options:
+        landmark_at_coord_questions = [
+            generate_landmark_at_coord_question() for _ in range(num_questions)
         ]
         
     question_lists = [
