@@ -17,7 +17,7 @@ def generate_year_of_event_question():
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
-    question_text = f"When did {row['Name']}?"
+    question_text = f"When did '{row['Name']}' happen?"
     
     return {
         'question_text': question_text,
