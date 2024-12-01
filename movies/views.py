@@ -52,3 +52,27 @@ def generate_actor_in_movie_question():
         'answers': answers,
         'correct_answer': correct_answer,
     }
+    
+def generate_year_of_movie_question():
+    movies = Movie.objects.all()
+    movie_data = [(movie.name, movie.release_year) for movie in movies]
+    df = pd.DataFrame(movie_data, columns=["Name", "Release Year"])
+    
+    movie = random.choice(df.to_dict(orient="records"))
+    correct_answer = movie["Release Year"]
+    
+    other_years = df[df["Release Year"] != movie["Release Year"]].sample(n=3)
+    incorrect_answers = []
+    for _, row in other_years.iterrows():
+        year = row["Release Year"]
+        incorrect_answers.append(year)
+    
+    answers = [correct_answer] + incorrect_answers
+    random.shuffle(answers)
+    question_text = f"Which movie does {movie["Name"]} star in?"
+    
+    return {
+        'question_text': question_text,
+        'answers': answers,
+        'correct_answer': correct_answer,
+    }

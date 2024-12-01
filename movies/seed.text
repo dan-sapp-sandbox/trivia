@@ -30,7 +30,6 @@ movies_data = [
     ("Harry Potter and the Philosopher's Stone", "Daniel Radcliffe, Emma Watson, Rupert Grint", "2001"),
     ("Star Wars: A New Hope", "Mark Hamill, Harrison Ford, Carrie Fisher", "1977"),
     ("The Social Network", "Jesse Eisenberg, Andrew Garfield, Justin Timberlake", "2010"),
-    ("Parasite", "Song Kang-ho, Lee Sun-kyun, Cho Yeo-jeong", "2019"),
     ("La La Land", "Ryan Gosling, Emma Stone", "2016"),
     ("The Grand Budapest Hotel", "Ralph Fiennes, F. Murray Abraham, Mathieu Amalric", "2014"),
     ("Whiplash", "Miles Teller, J.K. Simmons", "2014"),
