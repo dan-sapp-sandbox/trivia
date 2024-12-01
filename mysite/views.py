@@ -206,6 +206,7 @@ def play_game(request):
         'question_number': question_index + 1,
         'question_text': question['question_text'],
         'answers': question['answers'],
+        'correct_answer': question['correct_answer'],
         'score': score,
         'questions': questions
     })

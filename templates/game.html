@@ -28,10 +28,47 @@
     <form method="post" class="answer-block">
       {% csrf_token %}
       {% for answer in answers %}
-      <button class="answer" type="submit" name="answer" value="{{ answer }}">{{ answer }}</button>
+      <button class="answer" type="submit" name="answer" value="{{ answer }}"
+        data-correct="{% if answer == correct_answer %}true{% else %}false{% endif %}">{{ answer }}</button>
       {% endfor %}
     </form>
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const answerButtons = document.querySelectorAll('.answer');
+      const correctAnswer = document.querySelector(`.answer[data-correct="true"]`);
+
+      answerButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+          event.preventDefault();
+          answerButtons.forEach(btn => btn.disabled = true);
+          const isCorrect = button.getAttribute('data-correct') === 'true';
+
+          if (!isCorrect) {
+            button.style.border = '3px solid red';
+            button.style.backgroundColor = 'rgba(255, 0, 0, 0.2)';
+          }
+
+          if (correctAnswer) {
+            correctAnswer.style.border = '3px solid green';
+            correctAnswer.style.backgroundColor = 'rgba(0, 255, 0, 0.2)';
+          }
+
+          const answerValue = button.value;
+          const hiddenInput = document.createElement('input');
+          hiddenInput.type = 'hidden';
+          hiddenInput.name = 'answer';
+          hiddenInput.value = answerValue;
+
+          button.closest('form').appendChild(hiddenInput);
+
+          setTimeout(() => {
+            button.closest('form').submit();
+          }, 1200);
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
