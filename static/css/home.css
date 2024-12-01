@@ -2,7 +2,6 @@ main {
   max-width: 800px;
   width: 100vw;
   height: 100vh;
-  margin: auto;
   color: white;
 }
 
@@ -20,7 +19,7 @@ p {
 
 .title {
   height: fit-content;
-  padding: 5px;
+  padding: 0 10px;
   font-weight: bold;
   font-family: cursive;
   font-size: 5rem;
@@ -33,6 +32,7 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
+  padding: 10px;
 }
 
 input[type="checkbox"] {
@@ -41,11 +41,11 @@ input[type="checkbox"] {
 
 label {
   display: inline-block;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   color: white;
   font-family: sans-serif;
   font-weight: bold;
-  padding: 5px 15px;
+  padding: 5px 10px;
   border: 2px solid transparent;
   border-radius: 50px;
   cursor: pointer;
@@ -57,239 +57,89 @@ input[type="checkbox"]:checked+label {
   transform: scale(1.05);
 }
 
-label[for="movies"] {
+label:nth-of-type(4n + 1) {
   background-color: rgb(230, 113, 236, 0.3);
 }
 
-label[for="movies"]:hover {
+label:nth-of-type(4n + 1):hover {
   background-color: rgb(230, 113, 236, 0.5);
 }
 
-input[type="checkbox"]:checked+label[for="movies"] {
+input[type="checkbox"]:checked+label:nth-of-type(4n + 1) {
   background-color: rgb(230, 113, 236, 0.8);
 }
 
-input[type="checkbox"]:checked+label[for="movies"]:hover {
+input[type="checkbox"]:checked+label:nth-of-type(4n + 1):hover {
   background-color: rgb(230, 113, 236, 0.65);
 }
 
-label[for="comics"] {
-  background-color: rgba(83, 211, 134, 0.3);
-}
-
-label[for="comics"]:hover {
-  background-color: rgba(83, 211, 134, 0.5);
-}
-
-input[type="checkbox"]:checked+label[for="comics"] {
-  background-color: rgb(83, 211, 134, 0.8);
-}
-
-input[type="checkbox"]:checked+label[for="comics"]:hover {
-  background-color: rgb(83, 211, 134, 0.65);
-}
-
-label[for="pokemon"] {
-  background-color: rgb(104, 183, 252, 0.3);
-}
-
-label[for="pokemon"]:hover {
-  background-color: rgb(104, 183, 252, 0.5);
-}
-
-input[type="checkbox"]:checked+label[for="pokemon"] {
-  background-color: rgb(104, 183, 252, 0.8);
-}
-
-input[type="checkbox"]:checked+label[for="pokemon"]:hover {
-  background-color: rgb(104, 183, 252, 0.65);
-}
-
-label[for="music"] {
-  background-color: rgb(234, 89, 89, 0.3);
-}
-
-label[for="music"]:hover {
-  background-color: rgb(234, 89, 89, 0.5);
-}
-
-input[type="checkbox"]:checked+label[for="music"] {
-  background-color: rgb(234, 89, 89, 0.8);
-}
-
-input[type="checkbox"]:checked+label[for="music"]:hover {
-  background-color: rgb(234, 89, 89, 0.65);
-}
-
-label[for="geography"] {
-  background-color: rgb(230, 113, 236, 0.3);
-}
-
-label[for="geography"]:hover {
-  background-color: rgb(230, 113, 236, 0.5);
-}
-
-input[type="checkbox"]:checked+label[for="geography"] {
-  background-color: rgb(230, 113, 236, 0.8);
-}
-
-input[type="checkbox"]:checked+label[for="geography"]:hover {
-  background-color: rgb(230, 113, 236, 0.65);
-}
-
-label[for="history"] {
+label:nth-of-type(4n + 2) {
   background-color: rgb(83, 211, 134, 0.3);
 }
 
-label[for="history"]:hover {
+label:nth-of-type(4n + 2):hover {
   background-color: rgb(83, 211, 134, 0.5);
 }
 
-input[type="checkbox"]:checked+label[for="history"] {
+input[type="checkbox"]:checked+label:nth-of-type(4n + 2) {
   background-color: rgb(83, 211, 134, 0.8);
 }
 
-input[type="checkbox"]:checked+label[for="history"]:hover {
+input[type="checkbox"]:checked+label:nth-of-type(4n + 2):hover {
   background-color: rgb(83, 211, 134, 0.65);
 }
 
-label[for="english"] {
+label:nth-of-type(4n + 3) {
   background-color: rgb(104, 183, 252, 0.3);
 }
 
-label[for="english"]:hover {
+label:nth-of-type(4n + 3):hover {
   background-color: rgb(104, 183, 252, 0.5);
 }
 
-input[type="checkbox"]:checked+label[for="english"] {
+input[type="checkbox"]:checked+label:nth-of-type(4n + 3) {
   background-color: rgb(104, 183, 252, 0.8);
 }
 
-input[type="checkbox"]:checked+label[for="english"]:hover {
+input[type="checkbox"]:checked+label:nth-of-type(4n + 3):hover {
   background-color: rgb(104, 183, 252, 0.65);
 }
 
-label[for="spanish"] {
+label:nth-of-type(4n + 4) {
   background-color: rgb(234, 89, 89, 0.3);
 }
 
-label[for="spanish"]:hover {
+label:nth-of-type(4n + 4):hover {
   background-color: rgb(234, 89, 89, 0.5);
 }
 
-input[type="checkbox"]:checked+label[for="spanish"] {
+input[type="checkbox"]:checked+label:nth-of-type(4n + 4) {
   background-color: rgb(234, 89, 89, 0.8);
 }
 
-input[type="checkbox"]:checked+label[for="spanish"]:hover {
+input[type="checkbox"]:checked+label:nth-of-type(4n + 4):hover {
   background-color: rgb(234, 89, 89, 0.65);
 }
-
-label[for="french"] {
-  background-color: rgb(230, 113, 236, 0.3);
-}
-
-label[for="french"]:hover {
-  background-color: rgb(230, 113, 236, 0.5);
-}
-
-input[type="checkbox"]:checked+label[for="french"] {
-  background-color: rgb(230, 113, 236, 0.8);
-}
-
-input[type="checkbox"]:checked+label[for="french"]:hover {
-  background-color: rgb(230, 113, 236, 0.65);
-}
-
-label[for="german"] {
-  background-color: rgb(83, 211, 134, 0.3);
-}
-
-label[for="german"]:hover {
-  background-color: rgb(83, 211, 134, 0.5);
-}
-
-input[type="checkbox"]:checked+label[for="german"] {
-  background-color: rgb(83, 211, 134, 0.8);
-}
-
-input[type="checkbox"]:checked+label[for="german"]:hover {
-  background-color: rgb(83, 211, 134, 0.65);
-}
-
-label[for="japanese"] {
-  background-color: rgb(104, 183, 252, 0.3);
-}
-
-label[for="japanese"]:hover {
-  background-color: rgb(104, 183, 252, 0.5);
-}
-
-input[type="checkbox"]:checked+label[for="japanese"] {
-  background-color: rgb(104, 183, 252, 0.8);
-}
-
-input[type="checkbox"]:checked+label[for="japanese"]:hover {
-  background-color: rgb(104, 183, 252, 0.65);
-}
-
-label[for="books"] {
-  background-color: rgb(234, 89, 89, 0.3);
-}
-
-label[for="books"]:hover {
-  background-color: rgb(234, 89, 89, 0.5);
-}
-
-input[type="checkbox"]:checked+label[for="books"] {
-  background-color: rgb(234, 89, 89, 0.8);
-}
-
-input[type="checkbox"]:checked+label[for="books"]:hover {
-  background-color: rgb(234, 89, 89, 0.65);
-}
-
-label[for="chemistry"] {
-  background-color: rgb(230, 113, 236, 0.3);
-}
-
-label[for="chemistry"]:hover {
-  background-color: rgb(230, 113, 236, 0.5);
-}
-
-input[type="checkbox"]:checked+label[for="chemistry"] {
-  background-color: rgb(230, 113, 236, 0.8);
-}
-
-input[type="checkbox"]:checked+label[for="chemistry"]:hover {
-  background-color: rgb(230, 113, 236, 0.65);
-}
-
-form {
-  margin: 0 auto;
-  width: 100%;
-  padding: 10px;
-}
-
 
 h2 {
-  padding: 20px 10px 0;
+  padding: 20px 20px 0;
+  font-size: 1.2rem;
 }
 
 .toggle-container {
   display: flex;
   gap: 10px;
-  padding: 0 10px;
+  padding: 0 30px;
 }
 
 .toggle-container label {
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 5px 15px;
   background-color: #f0f0f0;
   color: black;
   border-radius: 25px;
   transition: background-color 0.3s, transform 0.2s;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   display: flex;
   align-items: center;
