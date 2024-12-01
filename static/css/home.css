@@ -13,11 +13,6 @@ main {
   flex-wrap: wrap;
 }
 
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
 p {
   font-size: 1.2em;
   margin-bottom: 20px;
@@ -154,6 +149,7 @@ button {
   background-color: rgb(252, 135, 80, .9);
   color: white;
   font-size: 2rem;
+  font-weight: bold;
   padding: 20px 30px;
   border: none;
   border-radius: 50px;
@@ -179,11 +175,17 @@ form {
   font-family: cursive;
   font-size: 5rem;
   color: rgb(252, 135, 80);
+  margin: 10px 0 40px;
+}
+
+h2 {
+  padding: 30px 10px 0;
 }
 
 .toggle-container {
   display: flex;
   gap: 10px;
+  padding: 0 10px;
 }
 
 .toggle-container label {
@@ -214,8 +216,4 @@ form {
 .toggle-container label:hover {
   background-color: #ddd;
   transform: scale(1.05);
-}
-
-.submit-button {
-  margin-top: 20px;
 }
