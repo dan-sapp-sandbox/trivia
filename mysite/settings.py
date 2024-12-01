@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'history',
     'words',
     'books',
+    'chemistry'
 ]
 
 MIDDLEWARE = [

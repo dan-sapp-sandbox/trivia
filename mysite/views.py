@@ -4,14 +4,15 @@ import os
 import ast
 from django.shortcuts import render, redirect
 from django.conf import settings
+from books.views import *
+from chemistry.views import *
 from comics.views import *
+from geography.views import *
+from history.views import *
 from movies.views import *
 from music.views import *
 from pokemon.views import *
-from geography.views import *
-from history.views import *
 from words.views import *
-from books.views import *
 
 def home(request):
     return render(request, 'home.html')
@@ -27,6 +28,12 @@ def load_trivia_questions(selected_options, num_questions):
     if 'comics' in selected_options:
         superhero_power_questions = [
             generate_superhero_power_question() for _ in range(num_questions)
+        ]
+        
+    year_of_hero_questions = []
+    if 'comics' in selected_options:
+        year_of_hero_questions = [
+            generate_year_of_hero_question() for _ in range(num_questions)
         ]
         
     movie_has_actor_questions = []
@@ -125,9 +132,22 @@ def load_trivia_questions(selected_options, num_questions):
             generate_book_of_author_question() for _ in range(num_questions)
         ]
         
+    name_of_element_questions = []
+    if 'chemistry' in selected_options:
+        name_of_element_questions = [
+            generate_name_of_element_question() for _ in range(num_questions)
+        ]
+        
+    symbol_of_element_questions = []
+    if 'chemistry' in selected_options:
+        symbol_of_element_questions = [
+            generate_symbol_of_element_question() for _ in range(num_questions)
+        ]
+        
     question_lists = [
         superhero_appearance_questions,
         superhero_power_questions,
+        year_of_hero_questions,
         movie_has_actor_questions,
         actor_in_movie_questions,
         year_of_movie_questions,
@@ -143,7 +163,9 @@ def load_trivia_questions(selected_options, num_questions):
         japanese_of_english_questions,
         english_of_japanese_questions,
         author_of_book_questions,
-        book_of_author_questions
+        book_of_author_questions,
+        name_of_element_questions,
+        symbol_of_element_questions
     ]
     questions = [question for sublist in question_lists for question in sublist]
     return questions

@@ -45,3 +45,26 @@ def generate_superhero_power_question():
         'answers': answers,
         'correct_answer': superhero["Name"],
     }
+
+def generate_year_of_hero_question():
+    superheroes = Superhero.objects.all()
+    hero_data = [(hero.name, hero.debut_date) for hero in superheroes]
+    df = pd.DataFrame(hero_data, columns=["Name", "Debut_Date"])
+    
+    hero = random.choice(df.to_dict(orient="records"))
+    correct_answer = hero["Debut_Date"]
+    
+    other_heroes = df[df["Debut_Date"] != hero["Debut_Date"]].sample(n=3)
+    incorrect_answers = []
+    for _, row in other_heroes.iterrows():
+        incorrect_answers.append(row["Debut_Date"])
+    
+    answers = [correct_answer] + incorrect_answers
+    random.shuffle(answers)
+    question_text = f"What year did {hero['Name']} debut?"
+    
+    return {
+        'question_text': question_text,
+        'answers': answers,
+        'correct_answer': correct_answer,
+    }

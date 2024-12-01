@@ -249,6 +249,22 @@ input[type="checkbox"]:checked+label[for="books"]:hover {
   background-color: rgb(234, 89, 89, 0.65);
 }
 
+label[for="chemistry"] {
+  background-color: rgb(230, 113, 236, 0.3);
+}
+
+label[for="chemistry"]:hover {
+  background-color: rgb(230, 113, 236, 0.5);
+}
+
+input[type="checkbox"]:checked+label[for="chemistry"] {
+  background-color: rgb(230, 113, 236, 0.8);
+}
+
+input[type="checkbox"]:checked+label[for="chemistry"]:hover {
+  background-color: rgb(230, 113, 236, 0.65);
+}
+
 form {
   margin: 0 auto;
   width: 100%;

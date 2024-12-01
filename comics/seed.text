@@ -82,18 +82,17 @@ fantastic_four_data = [
     ("She-Hulk", "Jennifer Walters", "Superhuman Strength, Durability, Expert Attorney", "Savage She-Hulk #1", "1980"),
     ("Medusa", "Medusalith Amaquelin", "Prehensile Hair Manipulation", "Fantastic Four #36", "1965"),
     ("Crystal", "Crystalia Amaquelin", "Elemental Manipulation (Air, Earth, Fire, Water)", "Fantastic Four #45", "1965"),
-    ("Namor the Sub-Mariner", "Namor McKenzie", "Aquatic Abilities, Superhuman Strength, Flight (Via Winged Ankles)", "Motion Picture Funnies Weekly #1, Fantastic Four #4 (Modern Introduction)", "1939, 1962"),
+    ("Namor the Sub-Mariner", "Namor McKenzie", "Aquatic Abilities, Superhuman Strength, Flight (Via Winged Ankles)", "Fantastic Four #4", "1962"),
     ("Black Panther", "T'Challa", "Enhanced Strength, Agility, Genius Intellect, Vibranium Suit", "Fantastic Four #52", "1966"),
     ("Lyja", "Lyja the Lazerfist", "Shapeshifting, Energy Projection", "Fantastic Four #357", "1991"),
     ("Nova", "Frankie Raye", "Cosmic Energy Manipulation, Flight", "Fantastic Four #164", "1975"),
     ("Thundra", "N/A", "Superhuman Strength, Durability, Combat Skills", "Fantastic Four #129", "1972"),
     ("Puppet Master", "Phillip Masters", "Mind Control Via Radioactive Clay", "Fantastic Four #8", "1962"),
-    ("Kang the Conqueror", "Nathaniel Richards", "Time Manipulation, Genius Intellect, Advanced Technology", "Avengers #8 (As Kang), Fantastic Four #19 (As Rama-Tut)", "1963, 1964"),
+    ("Kang the Conqueror", "Nathaniel Richards", "Time Manipulation, Genius Intellect, Advanced Technology", "Avengers #8", "1963"),
     ("Molecule Man", "Owen Reece", "Matter Manipulation On A Molecular Level", "Fantastic Four #20", "1963"),
     ("Annihilus", "N/A", "Energy Manipulation, Flight, Superhuman Strength", "Fantastic Four Annual #6", "1968"),
     ("Dragon Man", "N/A", "Superhuman Strength, Flight, Fire Breathing", "Fantastic Four #35", "1965"),
     ("Uatu the Watcher", "N/A", "Cosmic Knowledge, Observing Significant Events", "Fantastic Four #13", "1963"),
-    ("Johnny Storm's H.E.A.T.", "N/A", "Activism Group Dedicated To Supporting The Human Torch", "Fantastic Four (Referenced As A Concept)", "1990s"),
     ("Impossible Man", "N/A", "Shapeshifting, Reality Manipulation", "Fantastic Four #11", "1963"),
     ("Terrax", "Tyros", "Earth Manipulation, Cosmic Energy Wielder", "Fantastic Four #211", "1979"),
     ("Ronin the Accuser", "N/A", "Cosmic Energy Manipulation, Strength, Use Of Universal Weapon", "Fantastic Four #65", "1967"),
@@ -113,7 +112,7 @@ fantastic_four_data = [
     ("Malice", "Sue Storm Alter Ego", "Enhanced Strength, Sadism, Manipulation", "Fantastic Four #280", "1985"),
     ("Silver Dagger", "N/A", "Magic, Weaponry Expertise", "Fantastic Four Annual #15", "1980"),
     ("Nathaniel Richards", "N/A", "Genius Intellect, Time Travel Technology", "Fantastic Four #272", "1984"),
-    ("Korvac", "Michael Korvac", "Energy Manipulation, Immortality, Time Travel", "Fantastic Four Annual #1 (Mentioned), Giant-Size Defenders #3 (Physical)", "1963, 1975"),
+    ("Korvac", "Michael Korvac", "Energy Manipulation, Immortality, Time Travel", "Giant-Size Defenders #3", "1975"),
     ("Air-Walker", "Gabriel Lan", "Cosmic Energy Manipulation, Flight", "Fantastic Four #120", "1972")
 ]
 
@@ -185,7 +184,7 @@ avengers_data = [
     ("Wolverine", "Logan", "Regeneration, Adamantium Claws, Enhanced Senses", "The Incredible Hulk #180", "1974"),
     ("Ms. Marvel", "Carol Danvers", "Energy Absorption, Superhuman Strength, Flight", "Marvel Super-Heroes #13", "1968"),
     ("She-Hulk", "Jennifer Walters", "Superhuman Strength, Durability, Legal Expertise", "Savage She-Hulk #1", "1980"),
-    ("Winter Soldier", "Bucky Barnes", "Enhanced Strength, Cybernetic Arm, Espionage", "Captain America Comics #1 (As Bucky), Captain America #1 (As Winter Soldier)", "1941, 2005"),
+    ("Winter Soldier", "Bucky Barnes", "Enhanced Strength, Cybernetic Arm, Espionage", "Captain America Comics #1", "1941"),
     ("War Machine", "James Rhodes", "Powered Armor, Weaponry", "Iron Man #118", "1979"),
     ("Ant-Man", "Scott Lang", "Size Manipulation, Electronics Expertise", "The Avengers #181", "1979"),
     ("Hercules", "None", "Superhuman Strength, Durability, Combat Skills", "Journey into Mystery Annual #1", "1965"),
@@ -203,7 +202,7 @@ avengers_data = [
     ("Wonder Man", "Simon Williams", "Ionic Energy Manipulation, Superhuman Strength", "The Avengers #9", "1964"),
     ("Black Knight", "Dane Whitman", "Master Swordsman, Mystic Weaponry", "The Avengers #47", "1967"),
     ("Photon", "Monica Rambeau", "Energy Manipulation, Flight, Superhuman Speed", "The Amazing Spider-Man Annual #16", "1982"),
-    ("Namor", "Namor McKenzie", "Superhuman Strength, Flight, Aquatic Abilities", "Motion Picture Funnies Weekly #1, The Avengers #4", "1939, 1964"),
+    ("Namor", "Namor McKenzie", "Superhuman Strength, Flight, Aquatic Abilities", "The Avengers #4", "1964"),
     ("The Hulkling", "Teddy Altman", "Shapeshifting, Superhuman Strength", "Young Avengers #1", "2005"),
     ("Wiccan", "Billy Kaplan", "Magic, Reality Manipulation", "Young Avengers #1", "2005")
 ]
