@@ -8,7 +8,8 @@ from comics.views import generate_superhero_appearance_question, generate_superh
 from movies.views import generate_movie_has_actor_question, generate_actor_in_movie_question, generate_year_of_movie_question
 from music.views import generate_artist_of_song
 from pokemon.views import generate_pokemon_of_type
-# from geography.views import generate_landmark_at_coord_question
+from geography.views import generate_landmark_at_coord_question
+from history.views import generate_year_of_event_question
       
 def home(request):
     return render(request, 'home.html')
@@ -56,11 +57,17 @@ def load_trivia_questions(selected_options, num_questions):
             generate_pokemon_of_type() for _ in range(num_questions)
         ]
         
-    # landmark_at_coord_questions = []
-    # if 'geography' in selected_options:
-    #     landmark_at_coord_questions = [
-    #         generate_landmark_at_coord_question() for _ in range(num_questions)
-    #     ]
+    landmark_at_coord_questions = []
+    if 'geography' in selected_options:
+        landmark_at_coord_questions = [
+            generate_landmark_at_coord_question() for _ in range(num_questions)
+        ]
+        
+    year_of_event_questions = []
+    if 'history' in selected_options:
+        year_of_event_questions = [
+            generate_year_of_event_question() for _ in range(num_questions)
+        ]
         
     question_lists = [
         superhero_appearance_questions,
@@ -70,7 +77,8 @@ def load_trivia_questions(selected_options, num_questions):
         year_of_movie_questions,
         artist_of_song_questions,
         pokemon_of_type_questions,
-        # landmark_at_coord_questions
+        landmark_at_coord_questions,
+        year_of_event_questions,
     ]
     questions = [question for sublist in question_lists for question in sublist]
     return questions

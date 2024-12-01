@@ -18,22 +18,31 @@
       <h1 class="title">
         Quirk
       </h1>
-      <input type="checkbox" id="movies" checked name="topics" value="movies"
-        onchange="toggleHide('movies', 'movies-options')">
-      <label for="movies">Movies</label>
+      <div class="category-wrapper">
+        <input type="checkbox" id="movies" checked name="topics" value="movies"
+          onchange="toggleHide('movies', 'movies-options')">
+        <label for="movies">Movies</label>
 
-      <input type="checkbox" id="comics" checked name="topics" value="comics"
-        onchange="toggleHide('comics', 'comic-options')">
-      <label for="comics">Comics</label>
+        <input type="checkbox" id="comics" checked name="topics" value="comics"
+          onchange="toggleHide('comics', 'comic-options')">
+        <label for="comics">Comics</label>
 
-      <input type="checkbox" id="pokemon" checked name="topics" value="pokemon"
-        onchange="toggleHide('pokemon', 'pokemon-options')">
-      <label for="pokemon">Pokemon</label>
+        <input type="checkbox" id="pokemon" checked name="topics" value="pokemon"
+          onchange="toggleHide('pokemon', 'pokemon-options')">
+        <label for="pokemon">Pokemon</label>
 
-      <input type="checkbox" id="music" checked name="topics" value="music"
-        onchange="toggleHide('music', 'music-options')">
-      <label for="music">Music</label>
+        <input type="checkbox" id="music" checked name="topics" value="music"
+          onchange="toggleHide('music', 'music-options')">
+        <label for="music">Music</label>
 
+        <input type="checkbox" id="geography" checked name="topics" value="geography"
+          onchange="toggleHide('geography', 'geography-options')">
+        <label for="geography">Geography</label>
+
+        <input type="checkbox" id="history" checked name="topics" value="history"
+          onchange="toggleHide('history', 'history-options')">
+        <label for="history">History</label>
+      </div>
       <h2>Number of Questions per Category:</h2>
       <div class="toggle-container">
         <input type="radio" id="five" name="num_questions" value="5" checked>
@@ -49,7 +58,7 @@
         <label for="twenty">20</label>
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <button type="submit">Start Game</button>
       </div>
     </form>
   </main>

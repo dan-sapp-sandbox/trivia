@@ -23,20 +23,26 @@ p {
   margin-bottom: 20px;
 }
 
+.category-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
 input[type="checkbox"] {
   display: none;
 }
 
 label {
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: white;
   font-family: sans-serif;
   font-weight: bold;
-  padding: 20px 30px;
-  margin: 5px;
+  padding: 10px 20px;
   border: 2px solid transparent;
-  border-radius: 15px;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -51,11 +57,15 @@ label[for="movies"] {
 }
 
 label[for="movies"]:hover {
-  background-color: rgb(230, 113, 236, 0.8);
+  background-color: rgb(230, 113, 236, 0.5);
 }
 
 input[type="checkbox"]:checked+label[for="movies"] {
-  background-color: rgb(230, 113, 236, 0.9);
+  background-color: rgb(230, 113, 236, 0.8);
+}
+
+input[type="checkbox"]:checked+label[for="movies"]:hover {
+  background-color: rgb(230, 113, 236, 0.65);
 }
 
 label[for="comics"] {
@@ -70,6 +80,10 @@ input[type="checkbox"]:checked+label[for="comics"] {
   background-color: rgb(83, 211, 134, 0.8);
 }
 
+input[type="checkbox"]:checked+label[for="comics"]:hover {
+  background-color: rgb(83, 211, 134, 0.65);
+}
+
 label[for="music"] {
   background-color: rgb(234, 89, 89, 0.3);
 }
@@ -80,6 +94,10 @@ label[for="music"]:hover {
 
 input[type="checkbox"]:checked+label[for="music"] {
   background-color: rgb(234, 89, 89, 0.8);
+}
+
+input[type="checkbox"]:checked+label[for="music"]:hover {
+  background-color: rgb(234, 89, 89, 0.65);
 }
 
 label[for="pokemon"] {
@@ -94,10 +112,46 @@ input[type="checkbox"]:checked+label[for="pokemon"] {
   background-color: rgb(104, 183, 252, 0.8);
 }
 
+input[type="checkbox"]:checked+label[for="pokemon"]:hover {
+  background-color: rgb(104, 183, 252, 0.65);
+}
+
+label[for="geography"] {
+  background-color: rgb(230, 113, 236, 0.3);
+}
+
+label[for="geography"]:hover {
+  background-color: rgb(230, 113, 236, 0.5);
+}
+
+input[type="checkbox"]:checked+label[for="geography"] {
+  background-color: rgb(230, 113, 236, 0.8);
+}
+
+input[type="checkbox"]:checked+label[for="geography"]:hover {
+  background-color: rgb(230, 113, 236, 0.65);
+}
+
+label[for="history"] {
+  background-color: rgb(83, 211, 134, 0.3);
+}
+
+label[for="history"]:hover {
+  background-color: rgb(83, 211, 134, 0.5);
+}
+
+input[type="checkbox"]:checked+label[for="history"] {
+  background-color: rgb(83, 211, 134, 0.8);
+}
+
+input[type="checkbox"]:checked+label[for="history"]:hover {
+  background-color: rgb(83, 211, 134, 0.65);
+}
+
 button {
   display: flex;
   justify-self: center;
-  background-color: #007BFF;
+  background-color: rgb(252, 135, 80, .9);
   color: white;
   font-size: 2rem;
   padding: 20px 30px;
@@ -109,7 +163,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: rgb(252, 135, 80, 1);
 }
 
 form {

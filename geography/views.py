@@ -10,14 +10,14 @@ def generate_landmark_at_coord_question():
     landmark = random.choice(df.to_dict(orient="records"))
     correct_answer = landmark["Name"]
     
-    other_landmarks = df[df["Name"] != movie["Name"]].sample(n=3)
+    other_landmarks = df[df["Name"] != landmark["Name"]].sample(n=3)
     incorrect_answers = []
     for _, row in other_landmarks.iterrows():
         incorrect_answers.append(row["Name"])
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
-    question_text = f"Which landmark lies at {row["Longitude"]} x {row["Latitude"]}?"
+    question_text = f"Which landmark lies at {row['Longitude']} x {row['Latitude']}?"
     
     return {
         'question_text': question_text,

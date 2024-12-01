@@ -20,5 +20,3 @@ for name, latitude, longitude in landmarks_data:
         longitude=longitude,
     )
     landmark.save()
-
-print("Superheroes data with title-cased powers has been added to the database.")
