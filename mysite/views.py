@@ -5,7 +5,8 @@ import ast
 from django.shortcuts import render, redirect
 from django.conf import settings
 from comics.views import generate_superhero_appearance_question, generate_superhero_power_question
-from movies.views import generate_movie_has_actor_question, generate_actor_in_movie_question, generate_year_of_movie_question
+# from movies.views import generate_movie_has_actor_question, generate_actor_in_movie_question
+# from movies.views import generate_movie_has_actor_question, generate_actor_in_movie_question, generate_year_of_movie_question
 # from music.views import generate_artist_of_song
 # from pokemon.views import generate_pokemon_of_type
 # from geography.views import generate_landmark_at_coord_question
@@ -19,28 +20,30 @@ def load_trivia_questions(selected_options, num_questions):
         superhero_appearance_questions = [
             generate_superhero_appearance_question() for _ in range(num_questions)
         ]
+        
     superhero_power_questions = []
     if 'comics' in selected_options:
         superhero_power_questions = [
             generate_superhero_power_question() for _ in range(num_questions)
         ]
-    movie_has_actor_questions = []
-    if 'movies' in selected_options:
-        actor_in_movie_questions = [
-            generate_movie_has_actor_question() for _ in range(num_questions)
-        ]
         
-    actor_in_movie_questions = []
-    if 'movies' in selected_options:
-        actor_in_movie_questions = [
-            generate_actor_in_movie_question() for _ in range(num_questions)
-        ]
+    # movie_has_actor_questions = []
+    # if 'movies' in selected_options:
+    #     actor_in_movie_questions = [
+    #         generate_movie_has_actor_question() for _ in range(num_questions)
+    #     ]
         
-    year_of_movie_questions = []
-    if 'movies' in selected_options:
-        year_of_movie_questions = [
-            generate_year_of_movie_question() for _ in range(num_questions)
-        ]
+    # actor_in_movie_questions = []
+    # if 'movies' in selected_options:
+    #     actor_in_movie_questions = [
+    #         generate_actor_in_movie_question() for _ in range(num_questions)
+    #     ]
+        
+    # year_of_movie_questions = []
+    # if 'movies' in selected_options:
+    #     year_of_movie_questions = [
+    #         generate_year_of_movie_question() for _ in range(num_questions)
+    #     ]
         
     # artist_of_song_questions = []
     # if 'music' in selected_options:
@@ -63,9 +66,9 @@ def load_trivia_questions(selected_options, num_questions):
     question_lists = [
         superhero_appearance_questions,
         superhero_power_questions,
-        movie_has_actor_questions,
-        actor_in_movie_questions,
-        year_of_movie_questions,
+        # movie_has_actor_questions,
+        # actor_in_movie_questions,
+        # year_of_movie_questions,
         # artist_of_song_questions,
         # pokemon_of_type_questions,
     ]
