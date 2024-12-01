@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'geography',
     'history',
     'words',
+    'books',
 ]
 
 MIDDLEWARE = [

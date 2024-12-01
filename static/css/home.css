@@ -18,6 +18,16 @@ p {
   margin-bottom: 20px;
 }
 
+.title {
+  height: fit-content;
+  padding: 5px;
+  font-weight: bold;
+  font-family: cursive;
+  font-size: 5rem;
+  color: rgb(252, 135, 80);
+  margin: 5px 0 20px;
+}
+
 .category-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -223,23 +233,20 @@ input[type="checkbox"]:checked+label[for="japanese"]:hover {
   background-color: rgb(104, 183, 252, 0.65);
 }
 
-button {
-  display: flex;
-  justify-self: center;
-  background-color: rgb(252, 135, 80, .9);
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 20px 30px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  margin-top: 5rem;
-  transition: all 0.3s ease;
+label[for="books"] {
+  background-color: rgb(234, 89, 89, 0.3);
 }
 
-button:hover {
-  background-color: rgb(252, 135, 80, 1);
+label[for="books"]:hover {
+  background-color: rgb(234, 89, 89, 0.5);
+}
+
+input[type="checkbox"]:checked+label[for="books"] {
+  background-color: rgb(234, 89, 89, 0.8);
+}
+
+input[type="checkbox"]:checked+label[for="books"]:hover {
+  background-color: rgb(234, 89, 89, 0.65);
 }
 
 form {
@@ -248,18 +255,9 @@ form {
   padding: 10px;
 }
 
-.title {
-  height: fit-content;
-  padding: 5px;
-  font-weight: bold;
-  font-family: cursive;
-  font-size: 5rem;
-  color: rgb(252, 135, 80);
-  margin: 10px 0 40px;
-}
 
 h2 {
-  padding: 30px 10px 0;
+  padding: 20px 10px 0;
 }
 
 .toggle-container {
@@ -296,4 +294,23 @@ h2 {
 .toggle-container label:hover {
   background-color: #ddd;
   transform: scale(1.05);
+}
+
+button {
+  display: flex;
+  justify-self: center;
+  background-color: rgb(252, 135, 80, .9);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(252, 135, 80, 1);
 }

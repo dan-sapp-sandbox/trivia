@@ -4,13 +4,15 @@ import os
 import ast
 from django.shortcuts import render, redirect
 from django.conf import settings
-from comics.views import generate_superhero_appearance_question, generate_superhero_power_question
-from movies.views import generate_movie_has_actor_question, generate_actor_in_movie_question, generate_year_of_movie_question
-from music.views import generate_artist_of_song
-from pokemon.views import generate_pokemon_of_type
-from geography.views import generate_landmark_at_coord_question
-from history.views import generate_year_of_event_question
+from comics.views import *
+from movies.views import *
+from music.views import *
+from pokemon.views import *
+from geography.views import *
+from history.views import *
 from words.views import *
+from books.views import *
+
 def home(request):
     return render(request, 'home.html')
 
@@ -75,40 +77,52 @@ def load_trivia_questions(selected_options, num_questions):
             generate_word_of_definition_question() for _ in range(num_questions)
         ]
         
-    french_of_english_question = []
+    french_of_english_questions = []
     if 'french' in selected_options:
-        french_of_english_question = [
+        french_of_english_questions = [
             generate_french_of_english_question() for _ in range(num_questions)
         ]
         
-    english_of_french_question = []
+    english_of_french_questions = []
     if 'french' in selected_options:
-        english_of_french_question = [
+        english_of_french_questions = [
             generate_english_of_french_question() for _ in range(num_questions)
         ]
         
-    spanish_of_english_question = []
+    spanish_of_english_questions = []
     if 'spanish' in selected_options:
-        spanish_of_english_question = [
+        spanish_of_english_questions = [
             generate_spanish_of_english_question() for _ in range(num_questions)
         ]
         
-    english_of_spanish_question = []
+    english_of_spanish_questions = []
     if 'spanish' in selected_options:
-        english_of_spanish_question = [
+        english_of_spanish_questions = [
             generate_english_of_spanish_question() for _ in range(num_questions)
         ]
         
-    japanese_of_english_question = []
+    japanese_of_english_questions = []
     if 'japanese' in selected_options:
-        japanese_of_english_question = [
+        japanese_of_english_questions = [
             generate_japanese_of_english_question() for _ in range(num_questions)
         ]
         
-    english_of_japanese_question = []
+    english_of_japanese_questions = []
     if 'japanese' in selected_options:
-        english_of_japanese_question = [
+        english_of_japanese_questions = [
             generate_english_of_japanese_question() for _ in range(num_questions)
+        ]
+        
+    author_of_book_questions = []
+    if 'books' in selected_options:
+        author_of_book_questions = [
+            generate_author_of_book_question() for _ in range(num_questions)
+        ]
+        
+    book_of_author_questions = []
+    if 'books' in selected_options:
+        book_of_author_questions = [
+            generate_book_of_author_question() for _ in range(num_questions)
         ]
         
     question_lists = [
@@ -122,12 +136,14 @@ def load_trivia_questions(selected_options, num_questions):
         landmark_at_coord_questions,
         year_of_event_questions,
         word_of_definition_questions,
-        french_of_english_question,
-        english_of_french_question,
-        spanish_of_english_question,
-        english_of_spanish_question,
-        japanese_of_english_question,
-        english_of_japanese_question,
+        french_of_english_questions,
+        english_of_french_questions,
+        spanish_of_english_questions,
+        english_of_spanish_questions,
+        japanese_of_english_questions,
+        english_of_japanese_questions,
+        author_of_book_questions,
+        book_of_author_questions
     ]
     questions = [question for sublist in question_lists for question in sublist]
     return questions
