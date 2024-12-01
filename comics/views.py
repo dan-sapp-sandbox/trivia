@@ -58,6 +58,7 @@ def generate_year_of_hero_question():
     incorrect_answers = []
     for _, row in other_heroes.iterrows():
         incorrect_answers.append(row["Debut_Date"])
+    #TODO: make answers unique
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
