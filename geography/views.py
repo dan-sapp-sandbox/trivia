@@ -4,7 +4,7 @@ from geography.models import Landmark
 
 def generate_landmark_at_coord_question():
     landmarks = Landmark.objects.all()
-    landmark_data = [(landmark.name, landmark.longitude, , landmark.latitude) for landmark in landmarks]
+    landmark_data = [(landmark.name, landmark.longitude, landmark.latitude) for landmark in landmarks]
     df = pd.DataFrame(landmark_data, columns=["Name", "Longitude", "Latitude"])
     
     landmark = random.choice(df.to_dict(orient="records"))
