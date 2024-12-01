@@ -52,7 +52,7 @@ def generate_actor_in_movie_question():
         'answers': answers,
         'correct_answer': correct_answer,
     }
-    
+
 def generate_year_of_movie_question():
     movies = Movie.objects.all()
     movie_data = [(movie.name, movie.release_year) for movie in movies]
@@ -69,7 +69,7 @@ def generate_year_of_movie_question():
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
-    question_text = f"What year was '{movie["Name"]}' released?"
+    question_text = f"What year was '{movie['Name']}' released?"
     
     return {
         'question_text': question_text,
