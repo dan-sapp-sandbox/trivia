@@ -16,7 +16,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sessions',
     'comics',
-    'geography',
     'movies',
     'music',
     'pokemon',
