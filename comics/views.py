@@ -54,11 +54,8 @@ def generate_year_of_hero_question():
     hero = random.choice(df.to_dict(orient="records"))
     correct_answer = hero["Debut_Date"]
     
-    other_heroes = df[df["Debut_Date"] != hero["Debut_Date"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_heroes.iterrows():
-        incorrect_answers.append(row["Debut_Date"])
-    #TODO: make answers unique
+    other_heroes = df[df["Debut_Date"] != hero["Debut_Date"]]
+    incorrect_answers = other_heroes["Debut_Date"].drop_duplicates().sample(n=3).tolist()
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)

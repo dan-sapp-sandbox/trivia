@@ -10,10 +10,8 @@ def generate_author_of_book_question():
     book = random.choice(df.to_dict(orient="records"))
     correct_answer = book["Author"]
     
-    other_books = df[df["Author"] != book["Author"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_books.iterrows():
-        incorrect_answers.append(row["Author"])
+    other_books = df[df["Author"] != book["Author"]]
+    incorrect_answers = other_books["Author"].drop_duplicates().sample(n=3).tolist()
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
@@ -33,10 +31,8 @@ def generate_book_of_author_question():
     book = random.choice(df.to_dict(orient="records"))
     correct_answer = book["Name"]
     
-    other_books = df[df["Author"] != book["Author"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_books.iterrows():
-        incorrect_answers.append(row["Name"])
+    other_books = df[df["Name"] != book["Name"]]
+    incorrect_answers = other_books["Name"].drop_duplicates().sample(n=3).tolist()
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)

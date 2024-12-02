@@ -61,11 +61,8 @@ def generate_year_of_movie_question():
     movie = random.choice(df.to_dict(orient="records"))
     correct_answer = movie["Release_Year"]
     
-    other_years = df[df["Release_Year"] != movie["Release_Year"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_years.iterrows():
-        year = row["Release_Year"]
-        incorrect_answers.append(year)
+    other_years = df[df["Release_Year"] != movie["Release_Year"]]
+    incorrect_answers = other_years["Release_Year"].drop_duplicates().sample(n=3).tolist()
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)

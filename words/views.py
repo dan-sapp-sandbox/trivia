@@ -10,10 +10,8 @@ def generate_word_of_definition_question():
     word = random.choice(df.to_dict(orient="records"))
     correct_answer = word["Name"]
     
-    other_words = df[df["Name"] != word["Name"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_words.iterrows():
-        incorrect_answers.append(row["Name"])
+    other_words = df[df["Name"] != word["Name"]]
+    incorrect_answers = other_words["Name"].drop_duplicates().sample(n=3).tolist()
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
@@ -33,10 +31,8 @@ def generate_french_of_english_question():
     word = random.choice(df.to_dict(orient="records"))
     correct_answer = word["Name"]
     
-    other_words = df[df["Name"] != word["Name"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_words.iterrows():
-        incorrect_answers.append(row["Name"])
+    other_words = df[df["Name"] != word["Name"]]
+    incorrect_answers = other_words["Name"].drop_duplicates().sample(n=3).tolist()
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
@@ -56,10 +52,8 @@ def generate_english_of_french_question():
     word = random.choice(df.to_dict(orient="records"))
     correct_answer = word["French"]
     
-    other_words = df[df["Name"] != word["Name"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_words.iterrows():
-        incorrect_answers.append(row["French"])
+    other_words = df[df["Name"] != word["Name"]]
+    incorrect_answers = other_words["French"].drop_duplicates().sample(n=3).tolist()
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
@@ -79,10 +73,8 @@ def generate_spanish_of_english_question():
     word = random.choice(df.to_dict(orient="records"))
     correct_answer = word["Name"]
     
-    other_words = df[df["Name"] != word["Name"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_words.iterrows():
-        incorrect_answers.append(row["Name"])
+    other_words = df[df["Name"] != word["Name"]]
+    incorrect_answers = other_words["Name"].drop_duplicates().sample(n=3).tolist()
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
@@ -102,10 +94,8 @@ def generate_english_of_spanish_question():
     word = random.choice(df.to_dict(orient="records"))
     correct_answer = word["Spanish"]
     
-    other_words = df[df["Name"] != word["Name"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_words.iterrows():
-        incorrect_answers.append(row["Spanish"])
+    other_words = df[df["Name"] != word["Name"]]
+    incorrect_answers = other_words["Spanish"].drop_duplicates().sample(n=3).tolist()
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
@@ -125,10 +115,8 @@ def generate_japanese_of_english_question():
     word = random.choice(df.to_dict(orient="records"))
     correct_answer = word["Name"]
     
-    other_words = df[df["Name"] != word["Name"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_words.iterrows():
-        incorrect_answers.append(row["Name"])
+    other_words = df[df["Name"] != word["Name"]]
+    incorrect_answers = other_words["Name"].drop_duplicates().sample(n=3).tolist()
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
@@ -148,10 +136,8 @@ def generate_english_of_japanese_question():
     word = random.choice(df.to_dict(orient="records"))
     correct_answer = word["Japanese"]
     
-    other_words = df[df["Name"] != word["Name"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_words.iterrows():
-        incorrect_answers.append(row["Japanese"])
+    other_words = df[df["Name"] != word["Name"]]
+    incorrect_answers = other_words["Japanese"].drop_duplicates().sample(n=3).tolist()
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)

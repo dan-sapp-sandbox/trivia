@@ -10,14 +10,12 @@ def generate_year_of_event_question():
     event = random.choice(df.to_dict(orient="records"))
     correct_answer = event["Year"]
     
-    other_events = df[df["Year"] != event["Year"]].sample(n=3)
-    incorrect_answers = []
-    for _, row in other_events.iterrows():
-        incorrect_answers.append(row["Year"])
+    other_events = df[df["Year"] != event["Year"]]
+    incorrect_answers = other_events["Year"].drop_duplicates().sample(n=3).tolist()
     
     answers = [correct_answer] + incorrect_answers
     random.shuffle(answers)
-    question_text = f"When did '{row['Name']}' happen?"
+    question_text = f"When did '{event['Name']}' happen?"
     
     return {
         'question_text': question_text,
