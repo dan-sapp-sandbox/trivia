@@ -18,11 +18,11 @@
         <button onclick="window.location.href='/'">Back</button>
       </div>
       <p class="score">Score: <span>{{ score }}</span></p>
+      <p class="status">{{ question_number }}/{{ questions|length }}</p>
     </nav>
   </header>
   <main class="prompt">
     <div class="question-block">
-      <p class="status">Question {{ question_number }} of {{ questions|length }}</p>
       <p class="question">{{ question_text }}</p>
     </div>
     <form method="post" class="answer-block">
@@ -52,6 +52,10 @@
           if (correctAnswer) {
             correctAnswer.style.border = '3px solid green';
             correctAnswer.style.backgroundColor = 'rgba(0, 255, 0, 0.2)';
+            correctAnswer.classList.add('correct-answer-fill');
+            setTimeout(() => {
+              correctAnswer.classList.add('active');
+            }, 50);
           }
 
           const answerValue = button.value;
@@ -64,10 +68,11 @@
 
           setTimeout(() => {
             button.closest('form').submit();
-          }, 1200);
+          }, 1000);
         });
       });
     });
+
   </script>
 </body>
 

@@ -24,10 +24,6 @@ nav .home-link {
   background: rgb(155, 214, 157);
 }
 
-nav p {
-  grid-column: 4/9;
-  grid-row: 1;
-}
 
 main {
   max-width: 800px;
@@ -36,9 +32,19 @@ main {
 }
 
 .score {
+  grid-column: 4/9;
+  grid-row: 1;
   font-size: 1.5rem;
   text-align: center;
   font-weight: bold;
+}
+
+.status {
+  grid-column: 9/12;
+  grid-row: 1;
+  font-size: 1.4rem;
+  text-align: right;
+  font-family: sans-serif;
 }
 
 .prompt {
@@ -55,14 +61,6 @@ main {
   flex-direction: column;
   gap: 1rem;
   margin: 2rem auto 1rem;
-  height: 100px;
-}
-
-.question-block .status {
-  font-size: 1.4rem;
-  text-align: center;
-  margin: 0;
-  font-family: sans-serif;
 }
 
 .question-block .question {
@@ -130,4 +128,30 @@ main {
 
 .answer:nth-child(5):hover {
   background: rgb(124, 190, 247);
+}
+
+.correct-answer-fill {
+  position: relative;
+  overflow: hidden;
+}
+
+.correct-answer-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(0, 255, 0, 0.3);
+  transition: width 1s linear;
+  z-index: 0;
+}
+
+.correct-answer-fill span {
+  position: relative;
+  z-index: 1;
+}
+
+.correct-answer-fill.active::after {
+  width: 100%;
 }
