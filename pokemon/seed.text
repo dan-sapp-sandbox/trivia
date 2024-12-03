@@ -322,36 +322,19 @@ gen_4_pokemon_data = [
     ("Arceus", "Normal"),
 ]
 
+pokemon_by_gen = {
+    gen_1: gen_1_pokemon_data,
+    gen_2: gen_2_pokemon_data,
+    gen_3: gen_3_pokemon_data,
+    gen_4: gen_4_pokemon_data,
+    gen_5: gen_5_pokemon_data,
+}
 
-
-for name, types in gen_1_pokemon_data:
+for gen, pokemon_data in pokemon_by_gen.items():
+    for name, types in pokemon_data:
     pokemon = Pokemon(
         name=name,
         types=types,
-        gen_of_first_appearance="1",
-    )
-    pokemon.save()
-
-for name, types in gen_2_pokemon_data:
-    pokemon = Pokemon(
-        name=name,
-        types=types,
-        gen_of_first_appearance="2",
-    )
-    pokemon.save()
-
-for name, types in gen_3_pokemon_data:
-    pokemon = Pokemon(
-        name=name,
-        types=types,
-        gen_of_first_appearance="3",
-    )
-    pokemon.save()
-
-for name, types in gen_4_pokemon_data:
-    pokemon = Pokemon(
-        name=name,
-        types=types,
-        gen_of_first_appearance="4",
+        gen_of_first_appearance=gen,
     )
     pokemon.save()
